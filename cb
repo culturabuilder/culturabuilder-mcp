@@ -1,0 +1,104 @@
+#!/usr/bin/env python3
+"""
+CulturaBuilder CLI Wrapper
+Fornece autocomplete nativo para comandos /cb:
+"""
+
+import sys
+import subprocess
+import argparse
+from typing import List
+
+# Comandos disponíveis
+COMMANDS = {
+    'build': 'Construir componentes do projeto',
+    'analyze': 'Analisar código e arquitetura',
+    'deploy': 'Deploy com rollback automático',
+    'improve': 'Melhorar qualidade do código',
+    'metrics': 'Visualizar métricas de uso',
+    'test': 'Executar testes com cobertura',
+    'document': 'Gerar documentação bilíngue',
+    'workflow': 'Gerenciar workflows complexos',
+    'ai': 'Assistente IA para otimizações',
+    'learn': 'Sistema de aprendizado interativo',
+    'git': 'Gerenciamento Git bilíngue',
+    'scaffold': 'Criar estrutura de projetos',
+    'refactor': 'Refatorar código',
+    'security': 'Auditoria de segurança',
+    'performance': 'Otimização de performance',
+    'config': 'Configurações do CulturaBuilder',
+    'help': 'Mostrar ajuda'
+}
+
+def execute_command(command: str, args: List[str]):
+    """Execute command via Claude Code"""
+    full_command = f"/cb:{command}"
+    if args:
+        full_command += " " + " ".join(args)
+    
+    print(f"🌟 Executando: {full_command}")
+    
+    # Send to Claude Code via pipe
+    process = subprocess.Popen(
+        ['claude'],
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True
+    )
+    
+    stdout, stderr = process.communicate(input=full_command)
+    
+    if stdout:
+        print(stdout)
+    if stderr:
+        print(stderr, file=sys.stderr)
+    
+    return process.returncode
+
+def main():
+    parser = argparse.ArgumentParser(
+        description='🌟 CulturaBuilder CLI - Construa cultura através de tecnologia',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Exemplos:
+  cb build frontend         # Construir frontend
+  cb analyze --deep         # Análise profunda
+  cb metrics --summary      # Ver métricas
+  cb help                   # Mostrar ajuda
+
+Comandos disponíveis:
+""" + "\n".join(f"  {cmd:12} - {desc}" for cmd, desc in COMMANDS.items())
+    )
+    
+    parser.add_argument(
+        'command',
+        choices=COMMANDS.keys(),
+        help='Comando CulturaBuilder para executar'
+    )
+    
+    parser.add_argument(
+        'args',
+        nargs='*',
+        help='Argumentos para o comando'
+    )
+    
+    parser.add_argument(
+        '--lang',
+        choices=['pt-BR', 'en-US'],
+        default='pt-BR',
+        help='Idioma de saída (padrão: pt-BR)'
+    )
+    
+    args = parser.parse_args()
+    
+    # Add language flag if specified
+    command_args = args.args
+    if args.lang != 'pt-BR':
+        command_args.append(f'--lang={args.lang}')
+    
+    # Execute command
+    return execute_command(args.command, command_args)
+
+if __name__ == '__main__':
+    sys.exit(main())

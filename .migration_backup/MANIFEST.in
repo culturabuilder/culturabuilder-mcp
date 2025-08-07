@@ -1,7 +1,0 @@
-include VERSION
-include README.md
-include LICENSE
-recursive-include setup *
-recursive-include SuperClaude *
-recursive-include config *
-recursive-include profiles *

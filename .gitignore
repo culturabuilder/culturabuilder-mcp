@@ -57,3 +57,44 @@ wheels/
 .Trashes
 ehthumbs.db
 Desktop.ini
+# CulturaBuilder temporários
+*demo*.py
+*test*.py
+*test*.md
+*migrate*.py
+*cleanup*.py
+*standalone*
+.backup_removed_files/
+*.tar.gz
+
+# Arquivos grandes
+*.tar.gz
+*.zip
+*.dmg
+*.iso
+
+# Relatórios temporários
+*_report.json
+*_report.md
+*_UPDATE.md
+
+# CulturaBuilder temporários
+*demo*.py
+*test*.py
+*test*.md
+*migrate*.py
+*cleanup*.py
+*standalone*
+.backup_removed_files/
+*.tar.gz
+
+# Arquivos grandes
+*.tar.gz
+*.zip
+*.dmg
+*.iso
+
+# Relatórios temporários
+*_report.json
+*_report.md
+*_UPDATE.md
