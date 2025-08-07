@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-SuperClaude Framework Management Hub
-Unified entry point for all SuperClaude operations
+CulturaBuilder Framework Management Hub
+Unified entry point for all CulturaBuilder operations
 
 Usage:
-    SuperClaude install [options]
-    SuperClaude update [options]
-    SuperClaude uninstall [options]
-    SuperClaude backup [options]
-    SuperClaude --help
+    CulturaBuilder install [options]
+    CulturaBuilder update [options]
+    CulturaBuilder uninstall [options]
+    CulturaBuilder backup [options]
+    CulturaBuilder --help
 """

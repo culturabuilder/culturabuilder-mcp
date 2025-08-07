@@ -1,8 +1,8 @@
-# Contributing to SuperClaude Framework
+# Contributing to CulturaBuilder Framework
 
 Thanks for your interest in contributing! 🙏
 
-SuperClaude is a community-driven project that enhances Claude Code through modular hooks and intelligent orchestration. Every contribution helps make the framework more useful for developers.
+CulturaBuilder is a community-driven project that enhances Claude Code through modular hooks and intelligent orchestration. Every contribution helps make the framework more useful for developers.
 
 ## 🚀 Quick Start
 
@@ -15,10 +15,10 @@ SuperClaude is a community-driven project that enhances Claude Code through modu
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/SuperClaude.git
-cd SuperClaude
+git clone https://github.com/your-username/CulturaBuilder.git
+cd CulturaBuilder
 
-# Install SuperClaude
+# Install CulturaBuilder
 ./install.sh --standard
 
 # Run tests
@@ -55,8 +55,8 @@ python Tests/comprehensive_test.py
 
 ### Core Components
 ```
-SuperClaude/
-├── SuperClaude/
+CulturaBuilder/
+├── CulturaBuilder/
 │   ├── Hooks/          # 15 Python hooks (main extension points)
 │   ├── Commands/       # 14 slash commands
 │   ├── Core/          # Framework documentation
@@ -85,7 +85,7 @@ python Tests/task_management_test.py
 python Tests/performance_test_suite.py
 
 # Hook integration tests
-python SuperClaude/Hooks/test_orchestration_integration.py
+python CulturaBuilder/Hooks/test_orchestration_integration.py
 ```
 
 ### Writing Tests
@@ -101,7 +101,7 @@ python SuperClaude/Hooks/test_orchestration_integration.py
 #!/usr/bin/env python3
 """
 Brief description of hook purpose.
-Part of SuperClaude Framework v3.0
+Part of CulturaBuilder Framework v3.0
 """
 
 import json
@@ -188,7 +188,7 @@ git checkout -b feature/your-feature-name
 - Help others learn and improve
 
 ### Stay Focused
-- Keep discussions relevant to SuperClaude's goals
+- Keep discussions relevant to CulturaBuilder's goals
 - Avoid scope creep in feature requests
 - Consider if changes fit the modular philosophy
 
@@ -221,4 +221,4 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 ## 🙏 Acknowledgments
 
-Thanks to all contributors who help make SuperClaude better for the development community!
+Thanks to all contributors who help make CulturaBuilder better for the development community!

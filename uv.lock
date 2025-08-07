@@ -31,7 +31,7 @@ wheels = [
 ]
 
 [[package]]
-name = "superclaude"
+name = "culturabuilder"
 source = { editable = "." }
 dependencies = [
     { name = "setuptools", version = "75.3.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },

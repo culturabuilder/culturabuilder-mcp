@@ -1,4 +1,4 @@
-"""Utility modules for SuperClaude installation system"""
+"""Utility modules for CulturaBuilder installation system"""
 
 from .ui import ProgressBar, Menu, confirm, Colors
 from .logger import Logger

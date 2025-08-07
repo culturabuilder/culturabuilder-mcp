@@ -3,14 +3,14 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "SuperClaude"
+name = "CulturaBuilder"
 dynamic = ["version"]
-description = "SuperClaude Framework Management Hub"
+description = "CulturaBuilder Framework Management Hub"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    {name = "Mithun Gowda B", email = "contact@superclaude.dev"},
-    {name = "NomenAK", email = "contact@superclaude.dev"},
+    {name = "Mithun Gowda B", email = "contact@culturabuilder.dev"},
+    {name = "NomenAK", email = "contact@culturabuilder.dev"},
 ]
 requires-python = ">=3.8"
 dependencies = [
@@ -30,26 +30,26 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/NomenAK/SuperClaude"
-Repository = "https://github.com/NomenAK/SuperClaude"
-"Bug Tracker" = "https://github.com/NomenAK/SuperClaude/issues"
-"GitHub" = "https://github.com/NomenAK/SuperClaude"
+Homepage = "https://github.com/NomenAK/CulturaBuilder"
+Repository = "https://github.com/NomenAK/CulturaBuilder"
+"Bug Tracker" = "https://github.com/NomenAK/CulturaBuilder/issues"
+"GitHub" = "https://github.com/NomenAK/CulturaBuilder"
 "Mithun Gowda B" = "https://github.com/mithun50"
 "NomenAK" = "https://github.com/NomenAK"
 
 [project.scripts]
-SuperClaude = "SuperClaude.__main__:main"
+CulturaBuilder = "CulturaBuilder.__main__:main"
 
 [tool.hatch.version]
 path = "VERSION"
 pattern = "(?P<version>.*)"
 
 [tool.hatch.build.targets.wheel]
-packages = ["SuperClaude"]
+packages = ["CulturaBuilder"]
 
 [tool.hatch.build.targets.sdist]
 include = [
-    "SuperClaude/",
+    "CulturaBuilder/",
     "config/",
     "profiles/",
     "setup/",

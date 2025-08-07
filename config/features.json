@@ -3,7 +3,7 @@
     "core": {
       "name": "core",
       "version": "3.0.0",
-      "description": "SuperClaude framework documentation and core files",
+      "description": "CulturaBuilder framework documentation and core files",
       "category": "core",
       "dependencies": [],
       "enabled": true,
@@ -12,7 +12,7 @@
     "commands": {
       "name": "commands",
       "version": "3.0.0", 
-      "description": "SuperClaude slash command definitions",
+      "description": "CulturaBuilder slash command definitions",
       "category": "commands",
       "dependencies": ["core"],
       "enabled": true,

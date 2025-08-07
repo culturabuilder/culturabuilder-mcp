@@ -1,9 +1,9 @@
 """
-Security utilities for SuperClaude installation system
+Security utilities for CulturaBuilder installation system
 Path validation and input sanitization
 
 This module provides comprehensive security validation for file paths and user inputs
-during SuperClaude installation. It includes protection against:
+during CulturaBuilder installation. It includes protection against:
 - Directory traversal attacks
 - Installation to system directories
 - Path injection attacks
@@ -637,7 +637,7 @@ class SecurityValidator:
             return (
                 f"Cannot install to {dir_desc} '{path}'. "
                 f"Please choose a location in your home directory instead, "
-                f"such as ~/.claude/ or ~/SuperClaude/"
+                f"such as ~/.claude/ or ~/CulturaBuilder/"
             )
         else:
             return f"Security validation failed for path '{path}'"
@@ -703,7 +703,7 @@ class SecurityValidator:
             import datetime
             
             # Create security logger if it doesn't exist
-            security_logger = logging.getLogger('superclaude.security')
+            security_logger = logging.getLogger('culturabuilder.security')
             if not security_logger.handlers:
                 # Set up basic logging if not already configured
                 handler = logging.StreamHandler()
@@ -728,7 +728,7 @@ class SecurityValidator:
             pass
     
     @classmethod
-    def create_secure_temp_dir(cls, prefix: str = "superclaude_") -> Path:
+    def create_secure_temp_dir(cls, prefix: str = "culturabuilder_") -> Path:
         """
         Create secure temporary directory
         

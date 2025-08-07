@@ -1,18 +1,18 @@
 """
-SuperClaude Operations Module
+CulturaBuilder Operations Module
 
-This module contains all SuperClaude management operations that can be
-executed through the unified CLI hub (SuperClaude).
+This module contains all CulturaBuilder management operations that can be
+executed through the unified CLI hub (CulturaBuilder).
 
 Each operation module should implement:
 - register_parser(subparsers): Register CLI arguments for the operation
 - run(args): Execute the operation with parsed arguments
 
 Available operations:
-- install: Install SuperClaude framework components
-- update: Update existing SuperClaude installation
-- uninstall: Remove SuperClaude framework installation  
-- backup: Backup and restore SuperClaude installations
+- install: Install CulturaBuilder framework components
+- update: Update existing CulturaBuilder installation
+- uninstall: Remove CulturaBuilder framework installation  
+- backup: Backup and restore CulturaBuilder installations
 """
 
 __version__ = "3.0.0"
@@ -24,22 +24,22 @@ def get_operation_info():
     return {
         "install": {
             "name": "install",
-            "description": "Install SuperClaude framework components",
+            "description": "Install CulturaBuilder framework components",
             "module": "setup.operations.install"
         },
         "update": {
             "name": "update", 
-            "description": "Update existing SuperClaude installation",
+            "description": "Update existing CulturaBuilder installation",
             "module": "setup.operations.update"
         },
         "uninstall": {
             "name": "uninstall",
-            "description": "Remove SuperClaude framework installation", 
+            "description": "Remove CulturaBuilder framework installation", 
             "module": "setup.operations.uninstall"
         },
         "backup": {
             "name": "backup",
-            "description": "Backup and restore SuperClaude installations",
+            "description": "Backup and restore CulturaBuilder installations",
             "module": "setup.operations.backup"
         }
     }

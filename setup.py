@@ -25,10 +25,10 @@ def get_long_description():
             return fh.read()
     except FileNotFoundError:
         logger.warning("README.md not found")
-        return "SuperClaude Framework Management Hub"
+        return "CulturaBuilder Framework Management Hub"
     except Exception as e:
         logger.error(f"Error reading README.md: {e}")
-        return "SuperClaude Framework Management Hub"
+        return "CulturaBuilder Framework Management Hub"
 
 def get_install_requires():
     """Get install requirements with proper dependency management."""
@@ -49,29 +49,29 @@ def get_install_requires():
 
 # Main setup configuration
 setuptools.setup(
-    name="SuperClaude",
+    name="CulturaBuilder",
     version=get_version(),
     author="Mithun Gowda B, NomenAK",
-    author_email="contact@superclaude.dev",
-    description="SuperClaude Framework Management Hub",
+    author_email="contact@culturabuilder.dev",
+    description="CulturaBuilder Framework Management Hub",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
-    url="https://github.com/NomenAK/SuperClaude",
+    url="https://github.com/NomenAK/CulturaBuilder",
     packages=setuptools.find_packages(),
     include_package_data=True,
     install_requires=get_install_requires(),
     entry_points={
         "console_scripts": [
-            "SuperClaude=SuperClaude.__main__:main",
-            "superclaude=SuperClaude.__main__:main",
+            "CulturaBuilder=CulturaBuilder.__main__:main",
+            "culturabuilder=CulturaBuilder.__main__:main",
         ],
     },
     python_requires=">=3.8",
     project_urls={
-        "GitHub": "https://github.com/NomenAK/SuperClaude",
+        "GitHub": "https://github.com/NomenAK/CulturaBuilder",
         "Mithun Gowda B": "https://github.com/mithun50",
         "NomenAK": "https://github.com/NomenAK",
-        "Bug Tracker": "https://github.com/NomenAK/SuperClaude/issues",
+        "Bug Tracker": "https://github.com/NomenAK/CulturaBuilder/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",

@@ -1,5 +1,5 @@
 """
-SuperClaude Update Operation Module
+CulturaBuilder Update Operation Module
 Refactored from update.py for unified CLI hub
 """
 
@@ -35,14 +35,14 @@ def register_parser(subparsers, global_parser=None) -> argparse.ArgumentParser:
     
     parser = subparsers.add_parser(
         "update",
-        help="Update existing SuperClaude installation",
-        description="Update SuperClaude Framework components to latest versions",
+        help="Update existing CulturaBuilder installation",
+        description="Update CulturaBuilder Framework components to latest versions",
         epilog="""
 Examples:
-  SuperClaude update                       # Interactive update
-  SuperClaude update --check --verbose     # Check for updates (verbose)
-  SuperClaude update --components core mcp # Update specific components
-  SuperClaude update --backup --force      # Create backup before update (forced)
+  CulturaBuilder update                       # Interactive update
+  CulturaBuilder update --check --verbose     # Check for updates (verbose)
+  CulturaBuilder update --components core mcp # Update specific components
+  CulturaBuilder update --backup --force      # Create backup before update (forced)
         """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
         parents=parents
@@ -85,7 +85,7 @@ Examples:
     return parser
 
 def check_installation_exists(install_dir: Path) -> bool:
-    """Check if SuperClaude installation exists"""
+    """Check if CulturaBuilder installation exists"""
     settings_manager = SettingsManager(install_dir)
 
     return settings_manager.check_installation_exists()
@@ -126,7 +126,7 @@ def display_update_check(installed_components: Dict[str, str], available_updates
     print("=" * 50)
     
     if not installed_components:
-        print(f"{Colors.YELLOW}No SuperClaude installation found{Colors.RESET}")
+        print(f"{Colors.YELLOW}No CulturaBuilder installation found{Colors.RESET}")
         return
     
     print(f"{Colors.BLUE}Currently installed components:{Colors.RESET}")
@@ -344,14 +344,14 @@ def run(args: argparse.Namespace) -> int:
         # Display header
         if not args.quiet:
             display_header(
-                "SuperClaude Update v3.0",
-                "Updating SuperClaude framework components"
+                "CulturaBuilder Update v3.0",
+                "Updating CulturaBuilder framework components"
             )
         
-        # Check if SuperClaude is installed
+        # Check if CulturaBuilder is installed
         if not check_installation_exists(args.install_dir):
-            logger.error(f"SuperClaude installation not found in {args.install_dir}")
-            logger.info("Use 'SuperClaude install' to install SuperClaude first")
+            logger.error(f"CulturaBuilder installation not found in {args.install_dir}")
+            logger.info("Use 'CulturaBuilder install' to install CulturaBuilder first")
             return 1
         
         # Create component registry
@@ -400,7 +400,7 @@ def run(args: argparse.Namespace) -> int:
         
         if success:
             if not args.quiet:
-                display_success("SuperClaude update completed successfully!")
+                display_success("CulturaBuilder update completed successfully!")
                 
                 if not args.dry_run:
                     print(f"\n{Colors.CYAN}Next steps:{Colors.RESET}")

@@ -1,5 +1,5 @@
 """
-System validation for SuperClaude installation requirements
+System validation for CulturaBuilder installation requirements
 """
 
 import subprocess

@@ -1,5 +1,5 @@
 """
-Logging system for SuperClaude installation suite
+Logging system for CulturaBuilder installation suite
 """
 
 import logging
@@ -24,7 +24,7 @@ class LogLevel(Enum):
 class Logger:
     """Enhanced logger with console and file output"""
     
-    def __init__(self, name: str = "superclaude", log_dir: Optional[Path] = None, console_level: LogLevel = LogLevel.INFO, file_level: LogLevel = LogLevel.DEBUG):
+    def __init__(self, name: str = "culturabuilder", log_dir: Optional[Path] = None, console_level: LogLevel = LogLevel.INFO, file_level: LogLevel = LogLevel.DEBUG):
         """
         Initialize logger
         
@@ -282,7 +282,7 @@ class Logger:
 _global_logger: Optional[Logger] = None
 
 
-def get_logger(name: str = "superclaude") -> Logger:
+def get_logger(name: str = "culturabuilder") -> Logger:
     """Get or create global logger instance"""
     global _global_logger
     
@@ -292,7 +292,7 @@ def get_logger(name: str = "superclaude") -> Logger:
     return _global_logger
 
 
-def setup_logging(name: str = "superclaude", log_dir: Optional[Path] = None, console_level: LogLevel = LogLevel.INFO, file_level: LogLevel = LogLevel.DEBUG) -> Logger:
+def setup_logging(name: str = "culturabuilder", log_dir: Optional[Path] = None, console_level: LogLevel = LogLevel.INFO, file_level: LogLevel = LogLevel.DEBUG) -> Logger:
     """Setup logging with specified configuration"""
     global _global_logger
     _global_logger = Logger(name, log_dir, console_level, file_level)

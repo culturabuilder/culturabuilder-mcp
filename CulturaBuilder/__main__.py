@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-SuperClaude Framework Management Hub
-Unified entry point for all SuperClaude operations
+CulturaBuilder Framework Management Hub
+Unified entry point for all CulturaBuilder operations
 
 Usage:
-    SuperClaude install [options]
-    SuperClaude update [options]
-    SuperClaude uninstall [options]
-    SuperClaude backup [options]
-    SuperClaude --help
+    CulturaBuilder install [options]
+    CulturaBuilder update [options]
+    CulturaBuilder uninstall [options]
+    CulturaBuilder backup [options]
+    CulturaBuilder --help
 """
 
 import sys
@@ -42,6 +42,7 @@ try:
     )
     from setup.utils.logger import setup_logging, get_logger, LogLevel
     from setup import DEFAULT_INSTALL_DIR
+    from setup.managers.metrics_manager import MetricsManager
 except ImportError:
     # Provide minimal fallback functions and constants if imports fail
     class Colors:
@@ -85,19 +86,19 @@ def create_parser():
     global_parser = create_global_parser()
 
     parser = argparse.ArgumentParser(
-        prog="SuperClaude",
-        description="SuperClaude Framework Management Hub - Unified CLI",
+        prog="CulturaBuilder",
+        description="CulturaBuilder Framework Management Hub - Unified CLI",
         epilog="""
 Examples:
-  SuperClaude install --dry-run
-  SuperClaude update --verbose
-  SuperClaude backup --create
+  CulturaBuilder install --dry-run
+  CulturaBuilder update --verbose
+  CulturaBuilder backup --create
         """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
         parents=[global_parser]
     )
 
-    parser.add_argument("--version", action="version", version="SuperClaude v3.0.0")
+    parser.add_argument("--version", action="version", version="CulturaBuilder v3.0.0")
 
     subparsers = parser.add_subparsers(
         dest="operation",
@@ -120,21 +121,21 @@ def setup_global_environment(args: argparse.Namespace):
 
     # Define log directory unless it's a dry run
     log_dir = args.install_dir / "logs" if not args.dry_run else None
-    setup_logging("superclaude_hub", log_dir=log_dir, console_level=level)
+    setup_logging("culturabuilder_hub", log_dir=log_dir, console_level=level)
 
     # Log startup context
     logger = get_logger()
     if logger:
-        logger.debug(f"SuperClaude called with operation: {getattr(args, 'operation', 'None')}")
+        logger.debug(f"CulturaBuilder called with operation: {getattr(args, 'operation', 'None')}")
         logger.debug(f"Arguments: {vars(args)}")
 
 
 def get_operation_modules() -> Dict[str, str]:
     """Return supported operations and their descriptions"""
     return {
-        "install": "Install SuperClaude framework components",
-        "update": "Update existing SuperClaude installation",
-        "uninstall": "Remove SuperClaude installation",
+        "install": "Install CulturaBuilder framework components",
+        "update": "Update existing CulturaBuilder installation",
+        "uninstall": "Remove CulturaBuilder installation",
         "backup": "Backup and restore operations"
     }
 
@@ -197,7 +198,14 @@ def handle_legacy_fallback(op: str, args: argparse.Namespace) -> int:
 
 def main() -> int:
     """Main entry point"""
+    start_time = None
+    metrics_manager = None
+    operation = None
+    
     try:
+        import time
+        start_time = time.time()
+        
         parser, subparsers, global_parser = create_parser()
         operations = register_operation_parsers(subparsers, global_parser)
         args = parser.parse_args()
@@ -205,7 +213,7 @@ def main() -> int:
         # No operation provided? Show help manually unless in quiet mode
         if not args.operation:
             if not args.quiet:
-                display_header("SuperClaude Framework v3.0", "Unified CLI for all operations")
+                display_header("CulturaBuilder Framework v3.0", "Unified CLI for all operations")
                 print(f"{Colors.CYAN}Available operations:{Colors.RESET}")
                 for op, desc in get_operation_modules().items():
                     print(f"  {op:<12} {desc}")
@@ -221,30 +229,89 @@ def main() -> int:
         # Setup global context (logging, install path, etc.)
         setup_global_environment(args)
         logger = get_logger()
+        
+        # Initialize metrics manager if available
+        try:
+            metrics_manager = MetricsManager(args.install_dir)
+            operation = args.operation
+            # Extract flags from args
+            flags = []
+            for key, value in vars(args).items():
+                if key not in ['operation', 'install_dir'] and value:
+                    if value is True:
+                        flags.append(f"--{key.replace('_', '-')}")
+                    else:
+                        flags.append(f"--{key.replace('_', '-')}={value}")
+        except Exception as e:
+            # Metrics collection is optional, continue without it
+            if logger:
+                logger.debug(f"Metrics manager not available: {e}")
 
         # Execute operation
         run_func = operations.get(args.operation)
         if run_func:
             if logger:
                 logger.info(f"Executing operation: {args.operation}")
-            return run_func(args)
+            result = run_func(args)
+            
+            # Record successful operation
+            if metrics_manager and start_time:
+                duration = time.time() - start_time
+                metrics_manager.record_command(
+                    command=operation,
+                    flags=flags if 'flags' in locals() else [],
+                    success=(result == 0),
+                    duration=duration
+                )
+            
+            return result
         else:
             # Fallback to legacy script
             if logger:
                 logger.warning(f"Module for '{args.operation}' missing, using legacy fallback")
-            return handle_legacy_fallback(args.operation, args)
+            result = handle_legacy_fallback(args.operation, args)
+            
+            # Record legacy operation
+            if metrics_manager and start_time:
+                duration = time.time() - start_time
+                metrics_manager.record_command(
+                    command=operation,
+                    flags=flags if 'flags' in locals() else [],
+                    success=(result == 0),
+                    duration=duration,
+                    metadata={"legacy": True}
+                )
+            
+            return result
 
     except KeyboardInterrupt:
         print(f"\n{Colors.YELLOW}Operation cancelled by user{Colors.RESET}")
+        # Record session end if metrics are enabled
+        if metrics_manager:
+            metrics_manager.record_session_end()
         return 130
     except Exception as e:
         try:
             logger = get_logger()
             if logger:
                 logger.exception(f"Unhandled error: {e}")
+            # Record error if metrics are available
+            if metrics_manager and operation:
+                metrics_manager.record_error(
+                    error_type=type(e).__name__,
+                    command=operation,
+                    details=str(e)
+                )
         except:
             print(f"{Colors.RED}[ERROR] {e}{Colors.RESET}")
         return 1
+    finally:
+        # Always try to record session end
+        if metrics_manager:
+            try:
+                metrics_manager.record_session_end()
+            except:
+                pass
 
 
 # Entrypoint guard

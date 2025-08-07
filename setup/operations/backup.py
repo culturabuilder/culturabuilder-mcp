@@ -1,5 +1,5 @@
 """
-SuperClaude Backup Operation Module
+CulturaBuilder Backup Operation Module
 Refactored from backup.py for unified CLI hub
 """
 
@@ -35,16 +35,16 @@ def register_parser(subparsers, global_parser=None) -> argparse.ArgumentParser:
     
     parser = subparsers.add_parser(
         "backup",
-        help="Backup and restore SuperClaude installations",
-        description="Create, list, restore, and manage SuperClaude installation backups",
+        help="Backup and restore CulturaBuilder installations",
+        description="Create, list, restore, and manage CulturaBuilder installation backups",
         epilog="""
 Examples:
-  SuperClaude backup --create               # Create new backup
-  SuperClaude backup --list --verbose       # List available backups (verbose)
-  SuperClaude backup --restore              # Interactive restore
-  SuperClaude backup --restore backup.tar.gz  # Restore specific backup
-  SuperClaude backup --info backup.tar.gz   # Show backup information
-  SuperClaude backup --cleanup --force      # Clean up old backups (forced)
+  CulturaBuilder backup --create               # Create new backup
+  CulturaBuilder backup --list --verbose       # List available backups (verbose)
+  CulturaBuilder backup --restore              # Interactive restore
+  CulturaBuilder backup --restore backup.tar.gz  # Restore specific backup
+  CulturaBuilder backup --info backup.tar.gz   # Show backup information
+  CulturaBuilder backup --cleanup --force      # Clean up old backups (forced)
         """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
         parents=parents
@@ -137,7 +137,7 @@ def get_backup_directory(args: argparse.Namespace) -> Path:
 
 
 def check_installation_exists(install_dir: Path) -> bool:
-    """Check if SuperClaude installation (v2 included) exists"""
+    """Check if CulturaBuilder installation (v2 included) exists"""
     settings_manager = SettingsManager(install_dir)
 
     return settings_manager.check_installation_exists() or settings_manager.check_v2_installation_exists()
@@ -267,7 +267,7 @@ def create_backup(args: argparse.Namespace) -> bool:
     try:
         # Check if installation exists
         if not check_installation_exists(args.install_dir):
-            logger.error(f"No SuperClaude installation found in {args.install_dir}")
+            logger.error(f"No CulturaBuilder installation found in {args.install_dir}")
             return False
         
         # Setup backup directory
@@ -279,7 +279,7 @@ def create_backup(args: argparse.Namespace) -> bool:
         if args.name:
             backup_name = f"{args.name}_{timestamp}"
         else:
-            backup_name = f"superclaude_backup_{timestamp}"
+            backup_name = f"culturabuilder_backup_{timestamp}"
         
         # Determine compression
         if args.compress == "gzip":
@@ -509,8 +509,8 @@ def run(args: argparse.Namespace) -> int:
         # Display header
         if not args.quiet:
             display_header(
-                "SuperClaude Backup v3.0",
-                "Backup and restore SuperClaude installations"
+                "CulturaBuilder Backup v3.0",
+                "Backup and restore CulturaBuilder installations"
             )
         
         backup_dir = get_backup_directory(args)

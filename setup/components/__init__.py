@@ -1,4 +1,4 @@
-"""Component implementations for SuperClaude installation system"""
+"""Component implementations for CulturaBuilder installation system"""
 
 from .core import CoreComponent
 from .commands import CommandsComponent
