@@ -70,11 +70,22 @@ Digite `/cb:help` no Claude para ver todos!
 
 **Mais problemas?** Veja o [FAQ completo](FAQ.md) ou o [Guia de Troubleshooting](TROUBLESHOOTING.md)
 
+## Como Funciona? 🛠️
+
+### 1. MCP Server (Model Context Protocol)
+Adiciona comandos `/cb:` ao Claude Desktop e Claude Code
+
+### 2. Claude Code (Terminal)
+Use comandos `/cb:` diretamente no terminal com `claude`
+
+### 3. Comandos Nativos
+25+ comandos especializados para desenvolvimento
+
 ## Documentação 📖
 
 - **[Guia Rápido](QUICK_START.md)** - Comece em 5 minutos
 - **[FAQ](FAQ.md)** - Perguntas frequentes
-- **[Guia Completo](docs/README.md)** - Documentação detalhada
+- **[Guia Completo](README_BEGINNER_FRIENDLY.md)** - Tutorial do zero ao avançado
 - **[Contribuindo](CONTRIBUTING.md)** - Como ajudar o projeto
 
 ## Suporte 💬

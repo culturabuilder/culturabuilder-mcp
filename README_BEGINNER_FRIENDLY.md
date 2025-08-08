@@ -288,15 +288,6 @@ Edite `~/.claude/claude_desktop_config.json`:
 }
 ```
 
-### Interface Web (Opcional)
-
-```bash
-# Instalar interface web
-cd culturabuilder-web
-npm install
-npm run dev
-# Acesse: http://localhost:3000
-```
 
 ### Desenvolvimento e Contribuição
 
