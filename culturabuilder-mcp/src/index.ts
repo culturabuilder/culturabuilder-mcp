@@ -95,6 +95,46 @@ const CULTURABUILDER_COMMANDS: Record<string, {
     description: "❓ Ajuda e documentação dos comandos CulturaBuilder",
     args: ["command", "--lang", "--examples"],
     examples: ["/cb:help", "/cb:help build --examples"]
+  },
+  "/cb:audit": {
+    description: "🔍 Auditoria completa do projeto com relatórios detalhados",
+    args: ["--scope", "--focus", "--report", "--fix"],
+    examples: ["/cb:audit --scope all", "/cb:audit --focus security --fix"]
+  },
+  "/cb:changelog": {
+    description: "📋 Gera changelog automático baseado em commits",
+    args: ["--format", "--from", "--to", "--include-contributors"],
+    examples: ["/cb:changelog --format markdown", "/cb:changelog --from v1.0.0"]
+  },
+  "/cb:cleanup": {
+    description: "🧹 Limpeza inteligente de código morto e formatação",
+    args: ["target", "--aggressive", "--dry-run", "--format"],
+    examples: ["/cb:cleanup --aggressive", "/cb:cleanup src/ --dry-run"]
+  },
+  "/cb:debug": {
+    description: "🐛 Debug avançado com análise de stack trace",
+    args: ["error", "--trace", "--context", "--suggest-fix"],
+    examples: ["/cb:debug 'undefined is not a function'", "/cb:debug --trace"]
+  },
+  "/cb:inspect": {
+    description: "🔎 Inspeção profunda de código e dependências",
+    args: ["target", "--dependencies", "--structure", "--complexity"],
+    examples: ["/cb:inspect --dependencies", "/cb:inspect src/ --complexity"]
+  },
+  "/cb:readme": {
+    description: "📄 Cria README profissional com badges e estrutura",
+    args: ["--template", "--lang", "--badges", "--toc"],
+    examples: ["/cb:readme --template standard", "/cb:readme --lang pt-BR --badges"]
+  },
+  "/cb:release": {
+    description: "🚢 Prepara e cria releases com versionamento semântico",
+    args: ["version", "--tag", "--notes", "--draft"],
+    examples: ["/cb:release 1.2.0", "/cb:release --tag v2.0.0 --draft"]
+  },
+  "/cb:rollback": {
+    description: "↩️ Rollback inteligente com segurança",
+    args: ["target", "--to", "--safe", "--backup"],
+    examples: ["/cb:rollback --to previous", "/cb:rollback deployment --safe"]
   }
 };
 
