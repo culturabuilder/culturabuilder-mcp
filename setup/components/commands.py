@@ -12,7 +12,7 @@ class CommandsComponent(Component):
     
     def __init__(self, install_dir: Optional[Path] = None):
         """Initialize commands component"""
-        super().__init__(install_dir, Path("commands/sc"))
+        super().__init__(install_dir, Path("commands/cb"))
     
     def get_metadata(self) -> Dict[str, str]:
         """Get component metadata"""
@@ -74,8 +74,8 @@ class CommandsComponent(Component):
         try:
             self.logger.info("Uninstalling CulturaBuilder commands component...")
             
-            # Remove command files from sc subdirectory
-            commands_dir = self.install_dir / "commands" / "sc"
+            # Remove command files from cb subdirectory
+            commands_dir = self.install_dir / "commands" / "cb"
             removed_count = 0
             
             for filename in self.component_files:
@@ -162,7 +162,7 @@ class CommandsComponent(Component):
             self.logger.info(f"Updating commands component from {current_version} to {target_version}")
             
             # Create backup of existing command files
-            commands_dir = self.install_dir / "commands" / "sc"
+            commands_dir = self.install_dir / "commands" / "cb"
             backup_files = []
             
             if commands_dir.exists():
@@ -208,7 +208,7 @@ class CommandsComponent(Component):
         errors = []
         
         # Check if sc commands directory exists
-        commands_dir = self.install_dir / "commands" / "sc"
+        commands_dir = self.install_dir / "commands" / "cb"
         if not commands_dir.exists():
             errors.append("SC commands directory not found")
             return False, errors
@@ -263,7 +263,7 @@ class CommandsComponent(Component):
             "files_installed": len(self.component_files),
             "command_files": self.component_files,
             "estimated_size": self.get_size_estimate(),
-            "install_directory": str(self.install_dir / "commands" / "sc"),
+            "install_directory": str(self.install_dir / "commands" / "cb"),
             "dependencies": self.get_dependencies()
         }
     
@@ -271,7 +271,7 @@ class CommandsComponent(Component):
         """Migrate existing commands from old location to new sc subdirectory"""
         try:
             old_commands_dir = self.install_dir / "commands"
-            new_commands_dir = self.install_dir / "commands" / "sc"
+            new_commands_dir = self.install_dir / "commands" / "cb"
             
             # Check if old commands exist in root commands directory
             migrated_count = 0

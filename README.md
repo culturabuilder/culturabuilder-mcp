@@ -7,7 +7,7 @@
  ╚═════╝ ╚═════╝ ╚══════╝╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚═╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 ```
 
-> Adicione superpoderes ao Claude Desktop com comandos especializados para desenvolvimento!
+> Fork do SuperClaude Framework com comandos `/cb:` nativos para Claude Code!
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -15,8 +15,10 @@
 
 ## O que é isso? 🤔
 
-CulturaBuilder adiciona comandos especiais (que começam com `/cb:`) ao Claude Desktop, permitindo automatizar tarefas de desenvolvimento como construir projetos, analisar código, criar documentação e muito mais!
+CulturaBuilder é um fork do SuperClaude Framework que adiciona comandos especiais (que começam com `/cb:`) ao Claude Code, permitindo automatizar tarefas de desenvolvimento como construir projetos, analisar código, criar documentação e muito mais!
 
+**Baseado em**: SuperClaude Framework
+**Comandos**: `/cb:` ao invés de `/sc:`
 **Exemplo**: Digite `/cb:analyze` no Claude e ele analisa seu código automaticamente.
 
 ## Início Rápido ⚡
@@ -72,14 +74,11 @@ Digite `/cb:help` no Claude para ver todos!
 
 ## Como Funciona? 🛠️
 
-### 1. MCP Server (Model Context Protocol)
-Adiciona comandos `/cb:` ao Claude Desktop e Claude Code
+### Comandos Nativos para Claude Code
+O CulturaBuilder instala comandos `/cb:` diretamente no Claude Code, permitindo usar comandos especializados no terminal.
 
-### 2. Claude Code (Terminal)
-Use comandos `/cb:` diretamente no terminal com `claude`
-
-### 3. Comandos Nativos
-25+ comandos especializados para desenvolvimento
+### 25+ Comandos Especializados
+Comandos organizados em categorias para desenvolvimento, análise, qualidade, documentação e deploy.
 
 ## Documentação 📖
 

@@ -15,27 +15,23 @@
 ### ✅ Mantido (Essencial):
 ```
 SuperClaude_Framework/
-├── culturabuilder-mcp/          # ✅ Servidor MCP (core do projeto)
-├── README.md                     # ✅ Documentação principal
-├── README_BEGINNER_FRIENDLY.md   # ✅ Tutorial completo
-├── QUICK_START.md               # ✅ Guia rápido
-├── FAQ.md                       # ✅ Perguntas frequentes
-└── setup/                       # ✅ Scripts de configuração
+├── setup/                       # ✅ Scripts de configuração
+├── CulturaBuilder/              # ✅ Comandos e configurações
+├── README.md                    # ✅ Documentação principal
+├── README_BEGINNER_FRIENDLY.md  # ✅ Tutorial completo
+├── QUICK_START.md              # ✅ Guia rápido
+└── FAQ.md                      # ✅ Perguntas frequentes
 ```
 
 ## 🎯 Foco Atual
 
-### CulturaBuilder = MCP + Claude Code
+### CulturaBuilder = Comandos Nativos para Claude Code
 
-1. **MCP Server** (`culturabuilder-mcp/`)
-   - Registra comandos `/cb:` no Claude Desktop
-   - Funciona via Model Context Protocol
-   - TypeScript/Node.js
-
-2. **Comandos Claude Code** (`~/.claude/commands/cb/`)
+**Comandos Claude Code** (`~/.claude/commands/cb/`)
    - 25+ comandos disponíveis
    - Funciona no terminal com `claude`
-   - Markdown com metadados
+   - Comandos `/cb:` nativos
+   - Fork do SuperClaude Framework
 
 ## 📝 Como Funciona
 
