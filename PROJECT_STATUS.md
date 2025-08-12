@@ -25,13 +25,13 @@ SuperClaude_Framework/
 
 ## 🎯 Foco Atual
 
-### CulturaBuilder = Comandos Nativos para Claude Code
+### CulturaBuilder = Framework Integrador para Claude Code
 
 **Comandos Claude Code** (`~/.claude/commands/cb/`)
-   - 25+ comandos disponíveis
+   - 17+ comandos especializados disponíveis
    - Funciona no terminal com `claude`
-   - Comandos `/cb:` nativos
-   - Fork do SuperClaude Framework
+   - Comandos `/cb:` unificados
+   - Integra múltiplos frameworks em uma solução coesa
 
 ## 📝 Como Funciona
 

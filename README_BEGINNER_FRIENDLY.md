@@ -24,13 +24,13 @@
 
 ## 🤔 O que é CulturaBuilder?
 
-**Explicação Simples**: CulturaBuilder é uma extensão que adiciona superpoderes ao Claude Desktop (o aplicativo de IA da Anthropic). Com ele, você pode usar comandos especiais que começam com `/cb:` para automatizar tarefas de programação.
+**Explicação Simples**: CulturaBuilder é um framework integrador que adiciona superpoderes ao Claude Code. Com ele, você pode usar comandos especiais que começam com `/cb:` para automatizar tarefas de programação, unificando as melhores práticas de diversos frameworks em uma única interface.
 
-**Para Técnicos**: É um servidor MCP (Model Context Protocol) que adiciona 25+ comandos especializados ao Claude Desktop, com suporte bilíngue e interface web opcional.
+**Para Técnicos**: É um framework que integra múltiplas ferramentas e metodologias de desenvolvimento, oferecendo 17+ comandos especializados através do Claude Code, com arquitetura modular e extensível.
 
-### O que é MCP?
+### Como funciona?
 
-MCP (Model Context Protocol) é como se fosse uma "linguagem" que permite ao Claude Desktop conversar com ferramentas externas. O CulturaBuilder usa isso para adicionar comandos novos.
+CulturaBuilder unifica diversos frameworks e ferramentas em comandos simples e consistentes. Todos os comandos começam com `/cb:` para fácil identificação e uso.
 
 ---
 

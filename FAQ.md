@@ -3,7 +3,7 @@
 ## Perguntas Básicas
 
 ### O que é CulturaBuilder?
-É um fork do SuperClaude Framework que adiciona comandos especiais começando com `/cb:` ao Claude Code para automatizar tarefas de desenvolvimento.
+É um framework integrador que unifica múltiplos frameworks de desenvolvimento, oferecendo comandos especiais começando com `/cb:` no Claude Code para automatizar tarefas de desenvolvimento.
 
 ### É gratuito?
 Sim, o CulturaBuilder é 100% gratuito e open source (código aberto).

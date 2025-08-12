@@ -7,7 +7,7 @@
  ╚═════╝ ╚═════╝ ╚══════╝╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚═╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝
 ```
 
-> Fork do SuperClaude Framework com comandos `/cb:` nativos para Claude Code!
+> Framework integrador que unifica múltiplos frameworks de desenvolvimento em comandos `/cb:` para Claude Code!
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -15,11 +15,11 @@
 
 ## O que é isso? 🤔
 
-CulturaBuilder é um fork do SuperClaude Framework que adiciona comandos especiais (que começam com `/cb:`) ao Claude Code, permitindo automatizar tarefas de desenvolvimento como construir projetos, analisar código, criar documentação e muito mais!
+CulturaBuilder é um framework integrador que unifica as melhores práticas de múltiplos frameworks de desenvolvimento em uma interface única e poderosa. Através de comandos `/cb:` no Claude Code, você tem acesso a ferramentas especializadas para automatizar tarefas de desenvolvimento, análise de código, documentação e muito mais!
 
-**Baseado em**: SuperClaude Framework
-**Comandos**: `/cb:` ao invés de `/sc:`
-**Exemplo**: Digite `/cb:analyze` no Claude e ele analisa seu código automaticamente.
+**Comandos Unificados**: Todos os comandos começam com `/cb:` para fácil identificação
+**Integração Completa**: Combina o melhor de diversos frameworks em uma solução coesa
+**Exemplo**: Digite `/cb:analyze` no Claude e ele analisa seu código automaticamente usando as melhores ferramentas disponíveis.
 
 ## Início Rápido ⚡
 
@@ -74,11 +74,20 @@ Digite `/cb:help` no Claude para ver todos!
 
 ## Como Funciona? 🛠️
 
-### Comandos Nativos para Claude Code
-O CulturaBuilder instala comandos `/cb:` diretamente no Claude Code, permitindo usar comandos especializados no terminal.
+### Sistema de Comandos `/cb:`
+O CulturaBuilder implementa um sistema unificado de comandos que integra múltiplas ferramentas e frameworks através de uma interface consistente. Cada comando `/cb:` é otimizado para tarefas específicas de desenvolvimento.
 
-### 25+ Comandos Especializados
-Comandos organizados em categorias para desenvolvimento, análise, qualidade, documentação e deploy.
+### Arquitetura Integrada
+- **Comandos Nativos**: 17+ comandos especializados que funcionam diretamente no Claude Code
+- **Framework Unificado**: Integra as melhores práticas de diversos frameworks em uma solução coesa
+- **Interface Consistente**: Todos os comandos seguem o padrão `/cb:` para facilitar o uso e memorização
+
+### Categorias de Comandos
+- **Desenvolvimento**: build, implement, design, scaffold
+- **Análise**: analyze, troubleshoot, explain, inspect  
+- **Qualidade**: improve, test, cleanup, refactor
+- **Documentação**: document, readme, changelog
+- **Gestão**: git, task, workflow, deploy
 
 ## Documentação 📖
 

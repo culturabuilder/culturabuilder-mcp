@@ -28,15 +28,14 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - **Arte ASCII** do CULTURABUILDER no README
 
 #### 🔄 Changed (Alterado)
-- **Renomeação completa**: SuperClaude Framework → CulturaBuilder
-- **Namespace de comandos**: `/sc:` → `/cb:`
+- **Framework Integrador**: CulturaBuilder unifica múltiplos frameworks
+- **Comandos unificados**: Todos os comandos usam `/cb:`
 - **Foco simplificado**: Removido complexidade desnecessária
-- **Arquitetura**: De 3 sistemas para 1 sistema focado (MCP + Claude Code)
+- **Arquitetura**: Sistema único e coeso para Claude Code
 
 #### 🗑️ Removed (Removido)
 - **Frontend Web** - Interface web removida por complexidade desnecessária
 - **Extensão VSCode** - Removida após análise de viabilidade
-- Referências ao SuperClaude na documentação
 - Arquivos de migração obsoletos
 - ~110MB de código desnecessário
 
@@ -58,42 +57,6 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 - PROJECT_STATUS.md documentando a simplificação
 - Toda documentação em PT-BR com exemplos práticos
 
----
-
-## [0.9.0] - 2024-08-07 (Pre-release)
-
-### 🔄 Transição SuperClaude → CulturaBuilder
-
-#### Added
-- Primeiros 17 comandos `/cb:` funcionais
-- Estrutura base do MCP server
-- Configuração inicial do Claude Desktop
-
-#### Changed
-- Início da migração de SuperClaude para CulturaBuilder
-- Mudança de namespace de comandos
-
-#### Known Issues
-- 8 comandos ainda não implementados no MCP
-- Documentação incompleta
-- VSCode extension em desenvolvimento
-
----
-
-## [0.5.0] - 2024-08-05 (Alpha - SuperClaude)
-
-### 🏗️ Versão Original SuperClaude
-
-#### Added
-- Framework inicial SuperClaude
-- Comandos `/sc:` básicos
-- Interface web experimental
-- Extensão VSCode planejada
-
-#### Experimental
-- Frontend React para visualização
-- Sistema de plugins
-- Integração com múltiplas IDEs
 
 ---
 
@@ -119,28 +82,23 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
-## Notas de Migração
+## Notas de Instalação
 
-### De SuperClaude (0.x) para CulturaBuilder (1.0)
+#### Requisitos
+1. **Comandos unificados**: Todos os comandos usam `/cb:`
+2. **Configuração**: Arquivo de config em `~/.claude/`
+3. **Dependências**: Python 3.8+ requerido
 
-#### Mudanças Breaking
-1. **Namespace de comandos**: Todos os comandos `/sc:` agora são `/cb:`
-2. **Configuração**: Arquivo de config movido para `~/.claude/`
-3. **Dependências**: Node.js 18+ agora é obrigatório
-
-#### Como Migrar
+#### Como Instalar
 ```bash
-# 1. Desinstalar SuperClaude
-pip uninstall superclaude
-
-# 2. Instalar CulturaBuilder
+# 1. Instalar CulturaBuilder
 pip install culturabuilder
 
-# 3. Reconfigurar
+# 2. Configurar
 python3 -m culturabuilder install
 
-# 4. Atualizar comandos nos scripts
-# Substituir /sc: por /cb: em todos os lugares
+# 3. Testar
+# Digite /cb:help no Claude Code
 ```
 
 ---
