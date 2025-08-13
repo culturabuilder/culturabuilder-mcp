@@ -1,6 +1,6 @@
 # ORCHESTRATOR.md - CulturaBuilder Intelligent Routing System
 
-Intelligent routing system for Claude Code CulturaBuilder framework.
+Intelligent routing system for 16 commands and 9 personas in CulturaBuilder framework.
 
 ## 🧠 Detection Engine
 
@@ -99,12 +99,6 @@ iterative:
   file_patterns: ["*.*"]  # Can apply to any file type
   typical_operations: [improve, refine, enhance, correct, polish, fix, iterate]
 
-wave_eligible:
-  keywords: [comprehensive, systematically, thoroughly, enterprise, large-scale, multi-stage, progressive, iterative, campaign, audit]
-  complexity_indicators: [system-wide, architecture, performance, security, quality, scalability]
-  operation_indicators: [improve, optimize, refactor, modernize, enhance, audit, transform]
-  scale_indicators: [entire, complete, full, comprehensive, enterprise, large, massive]
-  typical_operations: [comprehensive_improvement, systematic_optimization, enterprise_transformation, progressive_enhancement]
 ```
 
 #### Operation Type Classification
@@ -139,12 +133,6 @@ iterative:
   outputs: [progressive improvements, refined results, enhanced quality]
   typical_tools: [Sequential, Read, Edit, MultiEdit, TodoWrite]
 
-wave_operations:
-  verbs: [comprehensively, systematically, thoroughly, progressively, iteratively]
-  modifiers: [improve, optimize, refactor, modernize, enhance, audit, transform]
-  outputs: [comprehensive improvements, systematic enhancements, progressive transformations]
-  typical_tools: [Sequential, Task, Read, Edit, MultiEdit, Context7]
-  wave_patterns: [review-plan-implement-validate, assess-design-execute-verify, analyze-strategize-transform-optimize]
 ```
 
 ### Intent Extraction Algorithm
@@ -152,41 +140,25 @@ wave_operations:
 1. Parse user request for keywords and patterns
 2. Match against domain/operation matrices
 3. Score complexity based on scope and steps
-4. Evaluate wave opportunity scoring
-5. Estimate resource requirements
-6. Generate routing recommendation (traditional vs wave mode)
-7. Apply auto-detection triggers for wave activation
+4. Estimate resource requirements
+5. Select appropriate persona and MCP servers
+6. Apply token optimization if needed
+7. Generate routing recommendation
 ```
-
-**Enhanced Wave Detection Algorithm**:
-- **Flag Overrides**: `--single-wave` disables, `--force-waves`/`--wave-mode` enables
-- **Scoring Factors**: Complexity (0.2-0.4), scale (0.2-0.3), operations (0.2), domains (0.1), flag modifiers (0.05-0.1)
-- **Thresholds**: Default 0.7, customizable via `--wave-threshold`, enterprise strategy lowers file thresholds
-- **Decision Logic**: Sum all indicators, trigger waves when total ≥ threshold
 
 ## 🚦 Routing Intelligence
 
 Dynamic decision trees that map detected patterns to optimal tool combinations, persona activation, and orchestration strategies.
 
-### Wave Orchestration Engine
-Multi-stage command execution with compound intelligence. Automatic complexity assessment or explicit flag control.
+### Command Routing Engine
+Intelligent routing for 16 commands with persona and MCP server selection.
 
-**Wave Control Matrix**:
-```yaml
-wave-activation:
-  automatic: "complexity >= 0.7"
-  explicit: "--wave-mode, --force-waves"
-  override: "--single-wave, --wave-dry-run"
-  
-wave-strategies:
-  progressive: "Incremental enhancement"
-  systematic: "Methodical analysis"
-  adaptive: "Dynamic configuration"
-```
-
-**Wave-Enabled Commands**:
-- **Tier 1**: `/cb:analyze`, `/cb:build`, `/cb:implement`, `/cb:improve`
-- **Tier 2**: `/cb:design`, `/cb:task`
+**Command Categories**:
+- **Development (4)**: build, implement, design, test
+- **Analysis (4)**: analyze, troubleshoot, explain, estimate
+- **Quality (3)**: improve, cleanup, document
+- **Management (3)**: task, git, spawn
+- **Meta (2)**: index, load
 
 ### Master Routing Table
 
@@ -201,14 +173,14 @@ wave-strategies:
 | "fix bug" | moderate | any | analyzer persona, --think, Sequential | 85% |
 | "optimize performance" | complex | backend | performance persona, --think-hard, Playwright | 90% |
 | "security audit" | complex | security | security persona, --ultrathink, Sequential | 95% |
-| "write documentation" | moderate | documentation | scribe persona, --persona-scribe=en, Context7 | 95% |
-| "improve iteratively" | moderate | iterative | intelligent persona, --seq, loop creation | 90% |
-| "analyze large codebase" | complex | any | --delegate --parallel-dirs, domain specialists | 95% |
-| "comprehensive audit" | complex | multi | --multi-agent --parallel-focus, specialized agents | 95% |
-| "improve large system" | complex | any | --wave-mode --adaptive-waves | 90% |
-| "security audit enterprise" | complex | security | --wave-mode --wave-validation | 95% |
-| "modernize legacy system" | complex | legacy | --wave-mode --enterprise-waves --wave-checkpoint | 92% |
-| "comprehensive code review" | complex | quality | --wave-mode --wave-validation --systematic-waves | 94% |
+| "write documentation" | moderate | documentation | scribe persona, Context7 | 95% |
+| "improve iteratively" | moderate | iterative | refactorer persona, --seq, --loop | 90% |
+| "analyze large codebase" | complex | any | --delegate --parallel-dirs, analyzer persona | 95% |
+| "comprehensive audit" | complex | multi | --delegate --parallel-focus, security persona | 95% |
+| "improve large system" | complex | any | --delegate auto, architect persona | 90% |
+| "security audit" | complex | security | security persona, --ultrathink | 95% |
+| "modernize legacy system" | complex | legacy | architect persona, --delegate | 92% |
+| "comprehensive code review" | complex | quality | qa persona, --think-hard | 94% |
 
 ### Decision Trees
 
@@ -221,9 +193,9 @@ wave-strategies:
 - **UI**: Magic
 - **Testing**: Playwright
 
-**Delegation & Wave Evaluation**:
+**Delegation Evaluation**:
 - **Delegation Score >0.6**: Add Task tool, auto-enable delegation flags based on scope
-- **Wave Score >0.7**: Add Sequential for coordination, auto-enable wave strategies based on requirements
+- **Token Optimization >75%**: Enable --uc flag for compression
 
 **Auto-Flag Assignment**:
 - Directory count >7 → `--delegate --parallel-dirs`
@@ -241,28 +213,13 @@ wave-strategies:
 - **High Token Requirements >15K**: +0.2 score  
 - **Multi-domain Operations >2**: +0.1 per domain
 
-**Wave Opportunity Scoring**:
-- **High Complexity >0.8**: +0.4 score
-- **Multiple Operation Types >2**: +0.3 score
-- **Critical Quality Requirements**: +0.2 score
-- **Large File Count >50**: +0.1 score
-- **Iterative Indicators**: +0.2 (scaled by indicators/3)
-- **Enterprise Scale**: +0.15 score
 
 **Strategy Recommendations**:
-- **Wave Score >0.7**: Use wave strategies
-- **Directories >7**: `parallel_dirs`
-- **Focus Areas >2**: `parallel_focus`  
-- **High Complexity**: `adaptive_delegation`
-- **Default**: `single_agent`
-
-**Wave Strategy Selection**:
-- **Security Focus**: `wave_validation`
-- **Performance Focus**: `progressive_waves`
-- **Critical Operations**: `wave_validation`
-- **Multiple Operations**: `adaptive_waves`
-- **Enterprise Scale**: `enterprise_waves`
-- **Default**: `systematic_waves`
+- **Directories >7**: `--delegate folders`
+- **Files >50**: `--delegate files`
+- **Focus Areas >2**: `--delegate auto`
+- **High Complexity**: `--concurrency 7`
+- **Default**: Single-agent execution
 
 **Auto-Delegation Triggers**:
 ```yaml
@@ -292,22 +249,16 @@ token_optimization:
   confidence: 80%
 ```
 
-**Wave Auto-Delegation Triggers**:
-- Complex improvement: complexity > 0.8 AND files > 20 AND operation_types > 2 → --wave-count 5 (95%)
-- Multi-domain analysis: domains > 3 AND tokens > 15K → --adaptive-waves (90%)
-- Critical operations: production_deploy OR security_audit → --wave-validation (95%)
-- Enterprise scale: files > 100 AND complexity > 0.7 AND domains > 2 → --enterprise-waves (85%)
-- Large refactoring: large_scope AND structural_changes AND complexity > 0.8 → --systematic-waves --wave-validation (93%)
 
 **Delegation Routing Table**:
 
 | Operation | Complexity | Auto-Delegates | Performance Gain |
 |-----------|------------|----------------|------------------|
-| `/cb:load @monorepo/` | moderate | --delegate --parallel-dirs | 65% |
-| `/cb:analyze --comprehensive` | high | --multi-agent --parallel-focus | 70% |
-| Comprehensive system improvement | high | --wave-mode --progressive-waves | 80% |
-| Enterprise security audit | high | --wave-mode --wave-validation | 85% |
-| Large-scale refactoring | high | --wave-mode --systematic-waves | 75% |
+| `/cb:load @monorepo/` | moderate | --delegate folders | 65% |
+| `/cb:analyze --comprehensive` | high | --delegate auto | 70% |
+| Comprehensive system improvement | high | --delegate --concurrency 7 | 75% |
+| Enterprise security audit | high | --delegate auto --ultrathink | 80% |
+| Large-scale refactoring | high | --delegate files | 70% |
 
 **Sub-Agent Specialization Matrix**:
 - **Quality**: qa persona, complexity/maintainability focus, Read/Grep/Sequential tools
@@ -316,12 +267,6 @@ token_optimization:
 - **Architecture**: architect persona, patterns/structure focus, Read/Sequential/Context7 tools
 - **API**: backend persona, endpoints/contracts focus, Grep/Context7/Sequential tools
 
-**Wave-Specific Specialization Matrix**:
-- **Review**: analyzer persona, current_state/quality_assessment focus, Read/Grep/Sequential tools
-- **Planning**: architect persona, strategy/design focus, Sequential/Context7/Write tools
-- **Implementation**: intelligent persona, code_modification/feature_creation focus, Edit/MultiEdit/Task tools
-- **Validation**: qa persona, testing/validation focus, Sequential/Playwright/Context7 tools
-- **Optimization**: performance persona, performance_tuning/resource_optimization focus, Read/Sequential/Grep tools
 
 #### Persona Auto-Activation System
 
@@ -349,7 +294,7 @@ token_optimization:
 - **Trigger Conditions**: Multi-component failures, root cause investigation
 - **Confidence Threshold**: 75% for automatic activation
 
-**Documentation Tasks** → `--persona-scribe=en`
+**Documentation Tasks** → `--persona-scribe`
 - **Trigger Conditions**: README, wiki, guides, commit messages, API docs
 - **Confidence Threshold**: 70% for automatic activation
 
@@ -362,17 +307,14 @@ token_optimization:
 - Complex debugging → --think + --seq + --persona-analyzer
 - Large codebase → --uc when context >75% + --delegate auto
 - Testing operations → --persona-qa + --play + --validate
-- DevOps operations → --persona-devops + --safe-mode + --validate
-- Refactoring → --persona-refactorer + --wave-strategy systematic + --validate
+- Infrastructure operations → --persona-backend + --safe-mode + --validate
+- Refactoring → --persona-refactorer + --validate
 - Iterative improvement → --loop for polish, refine, enhance keywords
 
-**Wave Auto-Activation**:
-- Complex multi-domain → --wave-mode auto when complexity >0.8 AND files >20 AND types >2
-- Enterprise scale → --wave-strategy enterprise when files >100 AND complexity >0.7 AND domains >2
-- Critical operations → Wave validation enabled by default for production deployments
-- Legacy modernization → --wave-strategy enterprise --wave-delegation tasks
-- Performance optimization → --wave-strategy progressive --wave-delegation files
-- Large refactoring → --wave-strategy systematic --wave-delegation folders
+**Token Optimization Auto-Activation**:
+- Context usage >75% → --uc flag enabled
+- Large operations >50 files → --uc flag suggested
+- Emergency mode >95% context → Ultra-compression forced
 
 **Sub-Agent Auto-Activation**:
 - File analysis → --delegate files when >50 files detected
@@ -392,36 +334,31 @@ token_optimization:
 4. --no-mcp overrides all individual MCP flags
 5. Scope: system > project > module > file
 6. Last specified persona takes precedence
-7. Wave mode: --wave-mode off > --wave-mode force > --wave-mode auto
-8. Sub-Agent delegation: explicit --delegate > auto-detection
-9. Loop mode: explicit --loop > auto-detection based on refinement keywords
-10. --uc auto-activation overrides verbose flags
+7. Sub-Agent delegation: explicit --delegate > auto-detection
+8. Loop mode: explicit --loop > auto-detection based on refinement keywords
+9. --uc auto-activation overrides verbose flags
 
 ### Confidence Scoring
 Based on pattern match strength (40%), historical success rate (30%), context completeness (20%), resource availability (10%).
 
 ## Quality Gates & Validation Framework
 
-### 8-Step Validation Cycle with AI Integration
+### 8-Step Validation Cycle
 ```yaml
 quality_gates:
-  step_1_syntax: "language parsers, Context7 validation, intelligent suggestions"
-  step_2_type: "Sequential analysis, type compatibility, context-aware suggestions"
-  step_3_lint: "Context7 rules, quality analysis, refactoring suggestions"
-  step_4_security: "Sequential analysis, vulnerability assessment, OWASP compliance"
+  step_1_syntax: "language parsers, Context7 validation"
+  step_2_type: "Sequential analysis, type compatibility"
+  step_3_lint: "Context7 rules, quality analysis"
+  step_4_security: "Sequential analysis, vulnerability assessment"
   step_5_test: "Playwright E2E, coverage analysis (≥80% unit, ≥70% integration)"
-  step_6_performance: "Sequential analysis, benchmarking, optimization suggestions"
-  step_7_documentation: "Context7 patterns, completeness validation, accuracy verification"
-  step_8_integration: "Playwright testing, deployment validation, compatibility verification"
+  step_6_performance: "Sequential analysis, benchmarking"
+  step_7_documentation: "Context7 patterns, completeness validation"
+  step_8_integration: "Playwright testing, deployment validation"
 
 validation_automation:
-  continuous_integration: "CI/CD pipeline integration, progressive validation, early failure detection"
-  intelligent_monitoring: "success rate monitoring, ML prediction, adaptive validation"
-  evidence_generation: "comprehensive evidence, validation metrics, improvement recommendations"
-
-wave_integration:
-  validation_across_waves: "wave boundary gates, progressive validation, rollback capability"
-  compound_validation: "AI orchestration, domain-specific patterns, intelligent aggregation"
+  continuous_integration: "CI/CD pipeline integration, early failure detection"
+  intelligent_monitoring: "success rate monitoring, adaptive validation"
+  evidence_generation: "comprehensive evidence, validation metrics"
 ```
 
 ### Task Completion Criteria
@@ -520,13 +457,12 @@ orchestrator_config:
   emergency_threshold: 90%
   compression_threshold: 75%
   
-  # Wave Mode Settings
-  wave_mode:
-    enable_auto_detection: true
-    wave_score_threshold: 0.7
-    max_waves_per_operation: 5
-    adaptive_wave_sizing: true
-    wave_validation_required: true
+  # Token Optimization
+  token_optimization:
+    enable_auto_compression: true
+    compression_threshold: 0.75
+    emergency_threshold: 0.95
+    progressive_levels: 5
 ```
 
 ### Custom Routing Rules

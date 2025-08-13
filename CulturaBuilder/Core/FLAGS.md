@@ -1,6 +1,6 @@
 # FLAGS.md - CulturaBuilder Flag Reference
 
-Flag system for Claude Code CulturaBuilder framework with auto-activation and conflict resolution.
+Flag system for Claude Code CulturaBuilder framework with token optimization and intelligent routing.
 
 ## Flag System Architecture
 
@@ -36,12 +36,18 @@ Flag system for Claude Code CulturaBuilder framework with auto-activation and co
 - Auto-activates: Legacy modernization, critical vulnerabilities, performance degradation >50%
 - Auto-enables `--seq --c7 --all-mcp` for comprehensive analysis
 
-## Compression & Efficiency Flags
+## Token Optimization Flags
 
 **`--uc` / `--ultracompressed`**
-- 30-50% token reduction using symbols and structured output
-- Auto-activates: Context usage >75% or large-scale operations
-- Auto-generated symbol legend, maintains technical accuracy
+- 70% token reduction using advanced compression
+- Symbols, abbreviations, and structured output
+- Auto-activates: Context usage >75%
+- Progressive compression levels:
+  - Minimal (0-40%): Full detail
+  - Efficient (40-70%): Balanced compression
+  - Compressed (70-85%): Aggressive optimization
+  - Critical (85-95%): Maximum compression
+  - Emergency (95%+): Ultra-compression
 
 **`--answer-only`**
 - Direct response without task creation or workflow automation
@@ -111,29 +117,6 @@ Flag system for Claude Code CulturaBuilder framework with auto-activation and co
 - Dynamic allocation based on resources and complexity
 - Prevents resource exhaustion in complex scenarios
 
-## Wave Orchestration Flags
-
-**`--wave-mode [auto|force|off]`**
-- Control wave orchestration activation
-- **auto**: Auto-activates based on complexity >0.8 AND file_count >20 AND operation_types >2
-- **force**: Override auto-detection and force wave mode for borderline cases
-- **off**: Disable wave mode, use Sub-Agent delegation instead
-- 30-50% better results through compound intelligence and progressive enhancement
-
-**`--wave-strategy [progressive|systematic|adaptive|enterprise]`**
-- Select wave orchestration strategy
-- **progressive**: Iterative enhancement for incremental improvements
-- **systematic**: Comprehensive methodical analysis for complex problems
-- **adaptive**: Dynamic configuration based on varying complexity
-- **enterprise**: Large-scale orchestration for >100 files with >0.7 complexity
-- Auto-selects based on project characteristics and operation type
-
-**`--wave-delegation [files|folders|tasks]`**
-- Control how Wave system delegates work to Sub-Agent
-- **files**: Sub-Agent delegates individual file analysis across waves
-- **folders**: Sub-Agent delegates directory-level analysis across waves
-- **tasks**: Sub-Agent delegates by task type (security, performance, quality, architecture)
-- Integrates with `--delegate` flag for coordinated multi-phase execution
 
 ## Scope & Focus Flags
 
@@ -170,18 +153,16 @@ Flag system for Claude Code CulturaBuilder framework with auto-activation and co
 
 ## Persona Activation Flags
 
-**Available Personas**:
+**Available Personas (9)**:
 - `--persona-architect`: Systems architecture specialist
 - `--persona-frontend`: UX specialist, accessibility advocate
-- `--persona-backend`: Reliability engineer, API specialist
+- `--persona-backend`: API, infrastructure, deployment specialist
 - `--persona-analyzer`: Root cause specialist
 - `--persona-security`: Threat modeler, vulnerability specialist
-- `--persona-mentor`: Knowledge transfer specialist
 - `--persona-refactorer`: Code quality specialist
 - `--persona-performance`: Optimization specialist
 - `--persona-qa`: Quality advocate, testing specialist
-- `--persona-devops`: Infrastructure specialist
-- `--persona-scribe=lang`: Professional writer, documentation specialist
+- `--persona-scribe`: Documentation and education specialist
 
 ## Introspection & Transparency Flags
 
@@ -209,13 +190,12 @@ Flag system for Claude Code CulturaBuilder framework with auto-activation and co
 4. --no-mcp overrides all individual MCP flags
 5. Scope: system > project > module > file
 6. Last specified persona takes precedence
-7. Wave mode: --wave-mode off > --wave-mode force > --wave-mode auto
-8. Sub-Agent delegation: explicit --delegate > auto-detection
-9. Loop mode: explicit --loop > auto-detection based on refinement keywords
-10. --uc auto-activation overrides verbose flags
+7. Sub-Agent delegation: explicit --delegate > auto-detection
+8. Loop mode: explicit --loop > auto-detection based on refinement keywords
+9. --uc auto-activation overrides verbose flags
 
 ### Context-Based Auto-Activation
 
-**Wave Auto-Activation**: complexity ≥0.7 AND files >20 AND operation_types >2
+**Token Optimization**: Context usage >75% OR large operations
 **Sub-Agent Auto-Activation**: >7 directories OR >50 files OR complexity >0.8
 **Loop Auto-Activation**: polish, refine, enhance, improve keywords detected

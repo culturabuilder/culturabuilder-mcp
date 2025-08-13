@@ -1,6 +1,6 @@
-# COMMANDS.md - CulturaBuilder Command Execution Framework
+# COMMANDS.md - CulturaBuilder Command System
 
-Command execution framework for Claude Code CulturaBuilder integration.
+CulturaBuilder command system for Claude Code - 16 unified commands with intelligent routing.
 
 ## Command System Architecture
 
@@ -28,132 +28,140 @@ performance-profile: "optimization|standard|complex"
 - **MCP Servers**: Context7, Sequential, Magic, Playwright integration
 - **Wave System**: Multi-stage orchestration for complex operations
 
-## Wave System Integration
+## Command Categories
 
-**Wave Orchestration Engine**: Multi-stage command execution with compound intelligence. Auto-activates on complexity ≥0.7 + files >20 + operation_types >2.
-
-**Wave-Enabled Commands**:
-- **Tier 1**: `/cb:analyze`, `/cb:build`, `/cb:implement`, `/cb:improve`
-- **Tier 2**: `/cb:design`, `/cb:task`
+**Development** (4): build, implement, design, test
+**Analysis** (4): analyze, troubleshoot, explain, estimate
+**Quality** (3): improve, cleanup, document
+**Management** (3): task, git, spawn
+**Meta** (2): index, load
 
 ### Development Commands
 
-**`/build $ARGUMENTS`**
-```yaml
----
-command: "/cb:build"
-category: "Development & Deployment"
-purpose: "Project builder with framework detection"
-wave-enabled: true
-performance-profile: "optimization"
----
-```
-- **Auto-Persona**: Frontend, Backend, Architect, Scribe
-- **MCP Integration**: Magic (UI builds), Context7 (patterns), Sequential (logic)
-- **Tool Orchestration**: [Read, Grep, Glob, Bash, TodoWrite, Edit, MultiEdit]
-- **Arguments**: `[target]`, `@<path>`, `!<command>`, `--<flags>`
+**`/cb:build [target] [flags]`**
+- **Purpose**: Compile and bundle projects with framework detection
+- **Auto-Persona**: Frontend, Backend, Architect
+- **MCP**: Magic (UI), Context7 (patterns), Sequential (complex)
+- **Tools**: Read, Grep, Glob, Bash, TodoWrite, Edit
 
-**`/implement $ARGUMENTS`**
-```yaml
----
-command: "/cb:implement"
-category: "Development & Implementation"
-purpose: "Feature and code implementation with intelligent persona activation"
-wave-enabled: true
-performance-profile: "standard"
----
-```
-- **Auto-Persona**: Frontend, Backend, Architect, Security (context-dependent)
-- **MCP Integration**: Magic (UI components), Context7 (patterns), Sequential (complex logic)
-- **Tool Orchestration**: [Read, Write, Edit, MultiEdit, Bash, Glob, TodoWrite, Task]
-- **Arguments**: `[feature-description]`, `--type component|api|service|feature`, `--framework <name>`, `--<flags>`
+**`/cb:implement [feature] [flags]`**
+- **Purpose**: Feature implementation with intelligent guidance
+- **Auto-Persona**: Frontend, Backend, Architect, Security
+- **MCP**: Magic (UI), Context7 (patterns), Sequential (logic)
+- **Tools**: Read, Write, Edit, MultiEdit, Bash, TodoWrite
 
+
+**`/cb:design [system] [flags]`**
+- **Purpose**: System design and architecture planning
+- **Auto-Persona**: Architect, Frontend, Backend
+- **MCP**: Sequential (planning), Context7 (patterns), Magic (UI)
+- **Tools**: Write, Read, TodoWrite
+
+**`/cb:test [type] [flags]`**
+- **Purpose**: Testing workflows and validation
+- **Auto-Persona**: QA, Backend, Frontend
+- **MCP**: Playwright (E2E), Sequential (planning)
+- **Tools**: Bash, Read, Write, TodoWrite
 
 ### Analysis Commands
 
-**`/analyze $ARGUMENTS`**
-```yaml
----
-command: "/cb:analyze"
-category: "Analysis & Investigation"
-purpose: "Multi-dimensional code and system analysis"
-wave-enabled: true
-performance-profile: "complex"
----
-```
+**`/cb:analyze [target] [flags]`**
+- **Purpose**: Multi-dimensional code and system analysis
 - **Auto-Persona**: Analyzer, Architect, Security
-- **MCP Integration**: Sequential (primary), Context7 (patterns), Magic (UI analysis)
-- **Tool Orchestration**: [Read, Grep, Glob, Bash, TodoWrite]
-- **Arguments**: `[target]`, `@<path>`, `!<command>`, `--<flags>`
+- **MCP**: Sequential (primary), Context7 (patterns)
+- **Tools**: Read, Grep, Glob, Bash, TodoWrite
 
-**`/troubleshoot [symptoms] [flags]`** - Problem investigation | Auto-Persona: Analyzer, QA | MCP: Sequential, Playwright
+**`/cb:troubleshoot [issue] [flags]`**
+- **Purpose**: Debug and resolve problems
+- **Auto-Persona**: Analyzer, QA
+- **MCP**: Sequential, Playwright
+- **Tools**: Read, Grep, Bash, TodoWrite
 
-**`/explain [topic] [flags]`** - Educational explanations | Auto-Persona: Mentor, Scribe | MCP: Context7, Sequential
+**`/cb:explain [topic] [flags]`**
+- **Purpose**: Technical explanations and documentation
+- **Auto-Persona**: Scribe, Analyzer
+- **MCP**: Context7, Sequential
+- **Tools**: Read, Write, TodoWrite
+
+**`/cb:estimate [task] [flags]`**
+- **Purpose**: Time and complexity estimation
+- **Auto-Persona**: Architect, Analyzer
+- **MCP**: Sequential, Context7
+- **Tools**: Read, Grep, TodoWrite
 
 
 ### Quality Commands
 
-**`/improve [target] [flags]`**
-```yaml
----
-command: "/cb:improve"
-category: "Quality & Enhancement"
-purpose: "Evidence-based code enhancement"
-wave-enabled: true
-performance-profile: "optimization"
----
-```
-- **Auto-Persona**: Refactorer, Performance, Architect, QA
-- **MCP Integration**: Sequential (logic), Context7 (patterns), Magic (UI improvements)
-- **Tool Orchestration**: [Read, Grep, Glob, Edit, MultiEdit, Bash]
-- **Arguments**: `[target]`, `@<path>`, `!<command>`, `--<flags>`
+**`/cb:improve [target] [flags]`**
+- **Purpose**: Code enhancement and optimization
+- **Auto-Persona**: Refactorer, Performance, Architect
+- **MCP**: Sequential, Context7, Magic (UI)
+- **Tools**: Read, Edit, MultiEdit, Bash
 
+**`/cb:cleanup [target] [flags]`**
+- **Purpose**: Technical debt reduction
+- **Auto-Persona**: Refactorer
+- **MCP**: Sequential
+- **Tools**: Read, Edit, MultiEdit, Bash
 
-**`/cleanup [target] [flags]`** - Project cleanup and technical debt reduction | Auto-Persona: Refactorer | MCP: Sequential
+**`/cb:document [target] [flags]`**
+- **Purpose**: Documentation generation
+- **Auto-Persona**: Scribe
+- **MCP**: Context7, Sequential
+- **Tools**: Read, Write, TodoWrite
 
-### Additional Commands
+### Management Commands
 
-**`/document [target] [flags]`** - Documentation generation | Auto-Persona: Scribe, Mentor | MCP: Context7, Sequential
+**`/cb:task [operation] [flags]`**
+- **Purpose**: Project and task management
+- **Auto-Persona**: Architect, Analyzer
+- **MCP**: Sequential
+- **Tools**: TodoWrite, Read, Write
 
-**`/estimate [target] [flags]`** - Evidence-based estimation | Auto-Persona: Analyzer, Architect | MCP: Sequential, Context7
+**`/cb:git [operation] [flags]`**
+- **Purpose**: Version control operations
+- **Auto-Persona**: Backend, Scribe
+- **MCP**: Sequential
+- **Tools**: Bash, Read, Write
 
-**`/task [operation] [flags]`** - Long-term project management | Auto-Persona: Architect, Analyzer | MCP: Sequential
+**`/cb:spawn [mode] [flags]`**
+- **Purpose**: Multi-agent task orchestration
+- **Auto-Persona**: Architect, Analyzer
+- **MCP**: All servers
+- **Tools**: Task, TodoWrite
 
-**`/test [type] [flags]`** - Testing workflows | Auto-Persona: QA | MCP: Playwright, Sequential
+### Meta Commands
 
-**`/git [operation] [flags]`** - Git workflow assistant | Auto-Persona: DevOps, Scribe, QA | MCP: Sequential
+**`/cb:index [query] [flags]`**
+- **Purpose**: Command discovery and help
+- **Auto-Persona**: Scribe, Analyzer
+- **MCP**: Sequential
+- **Tools**: Read, TodoWrite
 
-**`/design [domain] [flags]`** - Design orchestration | Auto-Persona: Architect, Frontend | MCP: Magic, Sequential, Context7
+**`/cb:load [path] [flags]`**
+- **Purpose**: Project context loading
+- **Auto-Persona**: Analyzer, Architect
+- **MCP**: All servers
+- **Tools**: Read, Grep, TodoWrite
 
-### Meta & Orchestration Commands
+## Command Summary
 
-**`/index [query] [flags]`** - Command catalog browsing | Auto-Persona: Mentor, Analyzer | MCP: Sequential
+### Total Commands: 16
 
-**`/load [path] [flags]`** - Project context loading | Auto-Persona: Analyzer, Architect, Scribe | MCP: All servers
+**Development (4)**: build, implement, design, test
+**Analysis (4)**: analyze, troubleshoot, explain, estimate
+**Quality (3)**: improve, cleanup, document
+**Management (3)**: task, git, spawn
+**Meta (2)**: index, load
 
-**Iterative Operations** - Use `--loop` flag with improvement commands for iterative refinement
+### MCP Server Integration
+- **Context7**: Documentation and patterns
+- **Sequential**: Complex analysis and reasoning
+- **Magic**: UI component generation
+- **Playwright**: Testing and browser automation
 
-**`/spawn [mode] [flags]`** - Task orchestration | Auto-Persona: Analyzer, Architect, DevOps | MCP: All servers
-
-## Command Execution Matrix
-
-### Performance Profiles
-```yaml
-optimization: "High-performance with caching and parallel execution"
-standard: "Balanced performance with moderate resource usage"
-complex: "Resource-intensive with comprehensive analysis"
-```
-
-### Command Categories
-- **Development**: build, implement, design
-- **Planning**: workflow, estimate, task
-- **Analysis**: analyze, troubleshoot, explain
-- **Quality**: improve, cleanup
-- **Testing**: test
-- **Documentation**: document
-- **Version-Control**: git
-- **Meta**: index, load, spawn
-
-### Wave-Enabled Commands
-7 commands: `/analyze`, `/build`, `/design`, `/implement`, `/improve`, `/task`, `/workflow`
+### Persona System (9)
+- **Technical**: architect, frontend, backend
+- **Quality**: analyzer, qa, refactorer
+- **Specialized**: security, performance, scribe
 
