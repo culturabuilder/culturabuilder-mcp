@@ -292,9 +292,8 @@ Edite `~/.claude/claude_desktop_config.json`:
 ### Desenvolvimento e Contribuição
 
 ```bash
-# Fork o projeto
-# Clone seu fork
-git clone https://github.com/SEU-USUARIO/CulturaBuilder-MCP.git
+# Clone o projeto
+git clone https://github.com/CulturaBuilder/CulturaBuilder-MCP.git
 
 # Crie branch
 git checkout -b minha-feature

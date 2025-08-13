@@ -185,8 +185,8 @@ wave-strategies:
 ```
 
 **Wave-Enabled Commands**:
-- **Tier 1**: `/analyze`, `/build`, `/implement`, `/improve`
-- **Tier 2**: `/design`, `/task`
+- **Tier 1**: `/cb:analyze`, `/cb:build`, `/cb:implement`, `/cb:improve`
+- **Tier 2**: `/cb:design`, `/cb:task`
 
 ### Master Routing Table
 
@@ -303,8 +303,8 @@ token_optimization:
 
 | Operation | Complexity | Auto-Delegates | Performance Gain |
 |-----------|------------|----------------|------------------|
-| `/load @monorepo/` | moderate | --delegate --parallel-dirs | 65% |
-| `/analyze --comprehensive` | high | --multi-agent --parallel-focus | 70% |
+| `/cb:load @monorepo/` | moderate | --delegate --parallel-dirs | 65% |
+| `/cb:analyze --comprehensive` | high | --multi-agent --parallel-focus | 70% |
 | Comprehensive system improvement | high | --wave-mode --progressive-waves | 80% |
 | Enterprise security audit | high | --wave-mode --wave-validation | 85% |
 | Large-scale refactoring | high | --wave-mode --systematic-waves | 75% |

@@ -61,7 +61,7 @@ CulturaBuilder é um conjunto de comandos especializados para desenvolvimento qu
 ### Estrutura de Diretórios
 
 ```
-SuperClaude_Framework/
+CulturaBuilder/
 ├── culturabuilder-mcp/       # Servidor MCP
 │   ├── src/
 │   │   └── index.ts         # Definição dos comandos

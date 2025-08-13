@@ -7,7 +7,7 @@ Command execution framework for Claude Code CulturaBuilder integration.
 ### Core Command Structure
 ```yaml
 ---
-command: "/{command-name}"
+command: "/cb:{command-name}"
 category: "Primary classification"
 purpose: "Operational objective"
 wave-enabled: true|false
@@ -33,15 +33,15 @@ performance-profile: "optimization|standard|complex"
 **Wave Orchestration Engine**: Multi-stage command execution with compound intelligence. Auto-activates on complexity ≥0.7 + files >20 + operation_types >2.
 
 **Wave-Enabled Commands**:
-- **Tier 1**: `/analyze`, `/build`, `/implement`, `/improve`
-- **Tier 2**: `/design`, `/task`
+- **Tier 1**: `/cb:analyze`, `/cb:build`, `/cb:implement`, `/cb:improve`
+- **Tier 2**: `/cb:design`, `/cb:task`
 
 ### Development Commands
 
 **`/build $ARGUMENTS`**
 ```yaml
 ---
-command: "/build"
+command: "/cb:build"
 category: "Development & Deployment"
 purpose: "Project builder with framework detection"
 wave-enabled: true
@@ -56,7 +56,7 @@ performance-profile: "optimization"
 **`/implement $ARGUMENTS`**
 ```yaml
 ---
-command: "/implement"
+command: "/cb:implement"
 category: "Development & Implementation"
 purpose: "Feature and code implementation with intelligent persona activation"
 wave-enabled: true
@@ -74,7 +74,7 @@ performance-profile: "standard"
 **`/analyze $ARGUMENTS`**
 ```yaml
 ---
-command: "/analyze"
+command: "/cb:analyze"
 category: "Analysis & Investigation"
 purpose: "Multi-dimensional code and system analysis"
 wave-enabled: true
@@ -96,7 +96,7 @@ performance-profile: "complex"
 **`/improve [target] [flags]`**
 ```yaml
 ---
-command: "/improve"
+command: "/cb:improve"
 category: "Quality & Enhancement"
 purpose: "Evidence-based code enhancement"
 wave-enabled: true

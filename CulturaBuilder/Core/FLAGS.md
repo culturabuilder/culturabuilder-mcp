@@ -156,7 +156,7 @@ Flag system for Claude Code CulturaBuilder framework with auto-activation and co
 **`--loop`**
 - Enable iterative improvement mode for commands
 - Auto-activates: Quality improvement requests, refinement operations, polish tasks
-- Compatible commands: /improve, /refine, /enhance, /fix, /cleanup, /analyze
+- Compatible commands: /cb:improve, /cb:refine, /cb:enhance, /cb:fix, /cb:cleanup, /cb:analyze
 - Default: 3 iterations with automatic validation
 
 **`--iterations [n]`**

@@ -14,7 +14,7 @@
 
 ### ✅ Mantido (Essencial):
 ```
-SuperClaude_Framework/
+CulturaBuilder/
 ├── setup/                       # ✅ Scripts de configuração
 ├── CulturaBuilder/              # ✅ Comandos e configurações
 ├── README.md                    # ✅ Documentação principal

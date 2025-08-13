@@ -5,7 +5,7 @@
 **The simple truth**: You don't need to pick personas or memorize what they do. CulturaBuilder usually tries to bring in helpful experts for each situation! 
 
 **Here's what actually happens:**
-- You type `/analyze auth.js` → Security expert usually jumps in 🛡️
+- You type `/cb:analyze auth.js` → Security expert usually jumps in 🛡️
 - You work on React components → Frontend specialist often takes over 🎨  
 - You debug performance issues → Performance optimizer often helps ⚡
 - You write documentation → Professional writer usually helps out ✍️
@@ -822,7 +822,7 @@ Personas often work together automatically. Here are common collaboration patter
 
 ### Getting Started (The Honest Way)
 1. **Just ignore personas completely at first** - Auto-activation handles everything
-2. **Use basic commands normally** - `/analyze`, `/build`, `/improve` work great without persona knowledge
+2. **Use basic commands normally** - `/cb:analyze`, `/cb:build`, `/cb:improve` work great without persona knowledge
 3. **Notice what happens** - You'll see different types of expertise emerge naturally
 4. **Trust the automation** - CulturaBuilder usually picks better experts than manual selection
 

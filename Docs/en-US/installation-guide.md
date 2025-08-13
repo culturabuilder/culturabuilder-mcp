@@ -203,7 +203,7 @@ CulturaBuilder install --quick
 - **Time**: ~2 minutes
 - **Space**: ~50MB
 - **Good for**: Most users, general development
-- **Includes**: Everything in minimal + specialized commands like `/analyze`, `/build`, `/improve`
+- **Includes**: Everything in minimal + specialized commands like `/cb:analyze`, `/cb:build`, `/cb:improve`
 
 ### 🔧 Developer Installation  
 ```bash
@@ -578,9 +578,9 @@ CulturaBuilder install --profile developer --dev-hooks
 
 **Now that CulturaBuilder is installed (that was easy, right?):**
 
-1. **Just start using it** - Try `/analyze some-file.js` or `/build` and see what happens ✨
+1. **Just start using it** - Try `/cb:analyze some-file.js` or `/cb:build` and see what happens ✨
 2. **Don't stress about learning** - CulturaBuilder usually figures out what you need
-3. **Experiment freely** - Commands like `/improve` and `/troubleshoot` are pretty forgiving
+3. **Experiment freely** - Commands like `/cb:improve` and `/cb:troubleshoot` are pretty forgiving
 4. **Read guides if curious** - Check `Docs/` when you want to understand what just happened
 5. **Give feedback** - Let us know what works and what doesn't
 

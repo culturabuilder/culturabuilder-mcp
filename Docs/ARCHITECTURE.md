@@ -390,7 +390,7 @@ class StateManager {
 ## 📁 Estrutura de Diretórios
 
 ```
-SuperClaude_Framework/
+CulturaBuilder/
 ├── culturabuilder-mcp/           # Servidor MCP
 │   ├── src/
 │   │   ├── index.ts             # Entry point

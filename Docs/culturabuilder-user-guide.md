@@ -7,7 +7,7 @@
 You don't need to learn all the commands, flags, and personas. Just start using it! 🎈
 
 CulturaBuilder has an **intelligent routing system** that tries to figure out what you need:
-- Type `/analyze some-code/` → It picks the right analysis tools
+- Type `/cb:analyze some-code/` → It picks the right analysis tools
 - Ask about security → Security expert auto-activates  
 - Work on frontend → UI specialist takes over
 - Debug something → Investigation mode kicks in
@@ -18,7 +18,7 @@ The detailed guides below? They're here **when you want to understand** what jus
 
 ---
 
-**TL;DR**: Install it, try `/analyze` or `/build` on your code, watch the magic happen.
+**TL;DR**: Install it, try `/cb:analyze` or `/cb:build` on your code, watch the magic happen.
 
 ---
 
@@ -74,19 +74,19 @@ CulturaBuilder makes Claude Code smarter for development work. Instead of generi
 
 **The honest truth**: We just released v3.0 and it's fresh out of beta. It works pretty well for what it does, but you should expect some rough edges as we continue improving things. We built this because we wanted Claude Code to be more helpful for real software development workflows.
 
-**The neat part?** You don't need to manage any of this complexity. Just use normal commands like `/analyze` or `/build` and CulturaBuilder usually figures out which experts to involve and what tools to use. 🪄
+**The neat part?** You don't need to manage any of this complexity. Just use normal commands like `/cb:analyze` or `/cb:build` and CulturaBuilder usually figures out which experts to involve and what tools to use. 🪄
 
 ### What CulturaBuilder Adds ✨
 
 **🛠️ 17 Specialized Commands**
 - Planning tools: `/workflow` (NEW!), `/estimate`, `/task`
-- Development tools: `/implement`, `/build`, `/design`
-- Analysis tools: `/analyze`, `/troubleshoot`, `/explain` 
-- Quality tools: `/improve`, `/cleanup`, `/test`
+- Development tools: `/cb:implement`, `/cb:build`, `/cb:design`
+- Analysis tools: `/cb:analyze`, `/cb:troubleshoot`, `/cb:explain` 
+- Quality tools: `/cb:improve`, `/cb:cleanup`, `/cb:test`
 - Plus utilities for documentation, git, deployment, and more
 - **You just use them** - CulturaBuilder handles the complexity automatically
 - **NEW**: `/workflow` command for PRD-to-implementation planning
-- **NEW**: `/implement` command for feature creation (restores v2 functionality) 
+- **NEW**: `/cb:implement` command for feature creation (restores v2 functionality) 
 
 **🎭 11 Smart Personas** *(that know when to jump in)*
 - AI specialists that adapt behavior for different domains
@@ -175,21 +175,21 @@ Commands are specialized tools that handle specific types of development work. I
 **15 Commands Organized by Purpose:**
 
 **Development** 🔨
-- `/build` - Project building, compilation, bundling
+- `/cb:build` - Project building, compilation, bundling
 - `/design` - System architecture and component design
 
 **Analysis** 🔍  
-- `/analyze` - Comprehensive code and system analysis
+- `/cb:analyze` - Comprehensive code and system analysis
 - `/troubleshoot` - Problem investigation and debugging
 - `/explain` - Educational explanations and learning
 
 **Quality** ✨
-- `/improve` - Code enhancement and optimization
+- `/cb:improve` - Code enhancement and optimization
 - `/cleanup` - Technical debt reduction
-- `/test` - Testing and coverage analysis
+- `/cb:test` - Testing and coverage analysis
 
 **Utilities** 🔧
-- `/document` - Documentation creation
+- `/cb:document` - Documentation creation
 - `/git` - Enhanced git workflows
 - `/load` - Project context loading
 - `/estimate` - Project estimation
@@ -299,7 +299,7 @@ The neat part is when components coordinate:
 ```
 
 **What usually happens:**
-1. **Command**: `/analyze` handles code analysis
+1. **Command**: `/cb:analyze` handles code analysis
 2. **Flag**: `--focus security` directs attention
 3. **Persona**: 🛡️ security specialist auto-activates
 4. **MCP**: Sequential provides systematic analysis
@@ -1274,7 +1274,7 @@ CulturaBuilder automatically coordinates components based on context. Here's how
 ```
 
 **Automatic coordination**:
-- **Command**: `/build` handles compilation and bundling
+- **Command**: `/cb:build` handles compilation and bundling
 - **Persona**: 🎨 frontend auto-activates (React detected)
 - **MCP**: Magic provides modern UI components
 - **MCP**: Context7 provides React best practices 

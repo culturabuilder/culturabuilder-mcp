@@ -31,7 +31,7 @@ MCP (Model Context Protocol) server integration and orchestration system for Cla
 6. Validation: Verify implementation against official documentation
 7. Caching: Store successful patterns for session reuse
 
-**Integration Commands**: `/build`, `/analyze`, `/improve`, `/design`, `/document`, `/explain`, `/git`
+**Integration Commands**: `/cb:build`, `/cb:analyze`, `/cb:improve`, `/cb:design`, `/cb:document`, `/cb:explain`, `/cb:git`
 
 **Error Recovery**:
 - Library not found → WebSearch for alternatives → Manual implementation

@@ -53,10 +53,10 @@ Persona system provides specialized AI behavior patterns optimized for specific 
 - **Avoided**: Magic - Focuses on generation over architectural consideration
 
 **Optimized Commands**:
-- `/analyze` - System-wide architectural analysis with dependency mapping
-- `/estimate` - Factors in architectural complexity and technical debt
-- `/improve --arch` - Structural improvements and design patterns
-- `/design` - Comprehensive system designs with scalability considerations
+- `/cb:analyze` - System-wide architectural analysis with dependency mapping
+- `/cb:estimate` - Factors in architectural complexity and technical debt
+- `/cb:improve --arch` - Structural improvements and design patterns
+- `/cb:design` - Comprehensive system designs with scalability considerations
 
 **Auto-Activation Triggers**:
 - Keywords: "architecture", "design", "scalability"
@@ -90,10 +90,10 @@ Persona system provides specialized AI behavior patterns optimized for specific 
 - **Secondary**: Playwright - For user interaction testing and performance validation
 
 **Optimized Commands**:
-- `/build` - UI build optimization and bundle analysis
-- `/improve --perf` - Frontend performance and user experience
-- `/test e2e` - User workflow and interaction testing
-- `/design` - User-centered design systems and components
+- `/cb:build` - UI build optimization and bundle analysis
+- `/cb:improve --perf` - Frontend performance and user experience
+- `/cb:test e2e` - User workflow and interaction testing
+- `/cb:design` - User-centered design systems and components
 
 **Auto-Activation Triggers**:
 - Keywords: "component", "responsive", "accessibility"
@@ -128,8 +128,8 @@ Persona system provides specialized AI behavior patterns optimized for specific 
 - **Avoided**: Magic - Focuses on UI generation rather than backend concerns
 
 **Optimized Commands**:
-- `/build --api` - API design and backend build optimization
-- `/git` - Version control and deployment workflows
+- `/cb:build --api` - API design and backend build optimization
+- `/cb:git` - Version control and deployment workflows
 
 **Auto-Activation Triggers**:
 - Keywords: "API", "database", "service", "reliability"
@@ -164,8 +164,8 @@ Persona system provides specialized AI behavior patterns optimized for specific 
 - **Tertiary**: All servers for comprehensive analysis when needed
 
 **Optimized Commands**:
-- `/analyze` - Systematic, evidence-based analysis
-- `/troubleshoot` - Root cause identification
+- `/cb:analyze` - Systematic, evidence-based analysis
+- `/cb:troubleshoot` - Root cause identification
 - `/explain --detailed` - Comprehensive explanations with evidence
 
 **Auto-Activation Triggers**:
@@ -202,7 +202,7 @@ Persona system provides specialized AI behavior patterns optimized for specific 
 
 **Optimized Commands**:
 - `/analyze --focus security` - Security-focused system analysis
-- `/improve --security` - Security hardening and vulnerability remediation
+- `/cb:improve --security` - Security hardening and vulnerability remediation
 
 **Auto-Activation Triggers**:
 - Keywords: "vulnerability", "threat", "compliance"
@@ -237,9 +237,9 @@ Persona system provides specialized AI behavior patterns optimized for specific 
 - **Avoided**: Magic - Prefers showing methodology over generating solutions
 
 **Optimized Commands**:
-- `/explain` - Comprehensive educational explanations
-- `/document` - Educational documentation and guides
-- `/index` - Navigate and understand complex systems
+- `/cb:explain` - Comprehensive educational explanations
+- `/cb:document` - Educational documentation and guides
+- `/cb:index` - Navigate and understand complex systems
 - Educational workflows across all command categories
 
 **Auto-Activation Triggers**:
@@ -275,8 +275,8 @@ Persona system provides specialized AI behavior patterns optimized for specific 
 - **Avoided**: Magic - Prefers refactoring existing code over generation
 
 **Optimized Commands**:
-- `/improve --quality` - Code quality and maintainability
-- `/cleanup` - Systematic technical debt reduction
+- `/cb:improve --quality` - Code quality and maintainability
+- `/cb:cleanup` - Systematic technical debt reduction
 - `/analyze --quality` - Code quality assessment and improvement planning
 
 **Auto-Activation Triggers**:
@@ -312,9 +312,9 @@ Persona system provides specialized AI behavior patterns optimized for specific 
 - **Avoided**: Magic - Generation doesn't align with optimization focus
 
 **Optimized Commands**:
-- `/improve --perf` - Performance optimization with metrics validation
+- `/cb:improve --perf` - Performance optimization with metrics validation
 - `/analyze --focus performance` - Performance bottleneck identification
-- `/test --benchmark` - Performance testing and validation
+- `/cb:test --benchmark` - Performance testing and validation
 
 **Auto-Activation Triggers**:
 - Keywords: "optimize", "performance", "bottleneck"
@@ -349,8 +349,8 @@ Persona system provides specialized AI behavior patterns optimized for specific 
 - **Avoided**: Magic - Prefers testing existing systems over generation
 
 **Optimized Commands**:
-- `/test` - Comprehensive testing strategy and implementation
-- `/troubleshoot` - Quality issue investigation and resolution
+- `/cb:test` - Comprehensive testing strategy and implementation
+- `/cb:troubleshoot` - Quality issue investigation and resolution
 - `/analyze --focus quality` - Quality assessment and improvement
 
 **Auto-Activation Triggers**:
@@ -386,7 +386,7 @@ Persona system provides specialized AI behavior patterns optimized for specific 
 - **Avoided**: Magic - UI generation doesn't align with infrastructure focus
 
 **Optimized Commands**:
-- `/git` - Version control workflows and deployment coordination
+- `/cb:git` - Version control workflows and deployment coordination
 - `/analyze --focus infrastructure` - Infrastructure analysis and optimization
 
 **Auto-Activation Triggers**:
@@ -426,10 +426,10 @@ Persona system provides specialized AI behavior patterns optimized for specific 
 - **Avoided**: Magic - Prefers crafting content over generating components
 
 **Optimized Commands**:
-- `/document` - Professional documentation creation with cultural adaptation
-- `/explain` - Clear explanations with audience-appropriate language
-- `/git` - Professional commit messages and PR descriptions
-- `/build` - User guide creation and documentation generation
+- `/cb:document` - Professional documentation creation with cultural adaptation
+- `/cb:explain` - Clear explanations with audience-appropriate language
+- `/cb:git` - Professional commit messages and PR descriptions
+- `/cb:build` - User guide creation and documentation generation
 
 **Auto-Activation Triggers**:
 - Keywords: "document", "write", "guide"

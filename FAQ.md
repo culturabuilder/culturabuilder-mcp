@@ -156,8 +156,8 @@ CulturaBuilder é focado em desenvolvimento com suporte bilíngue e comandos esp
 ### Funciona com ChatGPT/Gemini/outros?
 Não, é específico para Claude Desktop.
 
-### É uma cópia do SuperClaude?
-É um fork adaptado para as necessidades da comunidade CulturaBuilder.
+### CulturaBuilder é único?
+Sim, é um framework original desenvolvido especificamente para integrar múltiplos frameworks em comandos unificados.
 
 ---
 
