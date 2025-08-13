@@ -45,12 +45,19 @@ check_python() {
     echo -e "\n${BLUE}Verificando Python...${NC}"
     
     if command -v python3 &> /dev/null; then
-        PYTHON_VERSION=$(python3 --version 2>&1 | grep -Po '(?<=Python )\d+\.\d+')
+        # Solução compatível com macOS e Linux
+        PYTHON_VERSION=$(python3 --version 2>&1 | awk '{print $2}')
         echo -e "${GREEN}✓${NC} Python encontrado: $PYTHON_VERSION"
         
         # Verificar se é 3.8+
         MAJOR=$(echo $PYTHON_VERSION | cut -d. -f1)
         MINOR=$(echo $PYTHON_VERSION | cut -d. -f2)
+        
+        # Garantir que os valores não estão vazios
+        if [ -z "$MAJOR" ] || [ -z "$MINOR" ]; then
+            echo -e "${RED}✗${NC} Não foi possível detectar a versão do Python"
+            return 1
+        fi
         
         if [ "$MAJOR" -ge 3 ] && [ "$MINOR" -ge 8 ]; then
             echo -e "${GREEN}✓${NC} Python versão compatível"
@@ -71,12 +78,24 @@ install_python_macos() {
     
     # Verificar Homebrew
     if ! command -v brew &> /dev/null; then
-        echo -e "${YELLOW}Homebrew não encontrado. Instalando...${NC}"
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo -e "${YELLOW}Homebrew não encontrado.${NC}"
+        echo -e "${YELLOW}Por favor, instale o Homebrew primeiro:${NC}"
+        echo "/bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
+        echo ""
+        echo -e "${YELLOW}Depois execute este script novamente.${NC}"
+        exit 1
     fi
     
+    echo -e "${BLUE}Instalando Python via Homebrew...${NC}"
     brew install python3
-    echo -e "${GREEN}✓${NC} Python instalado via Homebrew"
+    
+    # Verificar se a instalação foi bem sucedida
+    if command -v python3 &> /dev/null; then
+        echo -e "${GREEN}✓${NC} Python instalado via Homebrew"
+    else
+        echo -e "${RED}✗${NC} Falha ao instalar Python"
+        exit 1
+    fi
 }
 
 # Instalar Python no Linux Debian/Ubuntu
@@ -98,7 +117,18 @@ install_python_redhat() {
 install_culturabuilder() {
     echo -e "\n${BLUE}Instalando CulturaBuilder MCP...${NC}"
     
+    # Verificar pip primeiro
+    if ! python3 -m pip --version &> /dev/null; then
+        echo -e "${YELLOW}pip não encontrado. Instalando...${NC}"
+        if [[ "$OS" == "macos" ]]; then
+            python3 -m ensurepip --upgrade
+        else
+            curl https://bootstrap.pypa.io/get-pip.py | python3
+        fi
+    fi
+    
     # Tentar diferentes métodos
+    echo -e "${BLUE}Tentando instalar via pip...${NC}"
     if python3 -m pip install culturabuilder 2>/dev/null; then
         echo -e "${GREEN}✓${NC} CulturaBuilder instalado com sucesso"
     elif python3 -m pip install --user culturabuilder 2>/dev/null; then
