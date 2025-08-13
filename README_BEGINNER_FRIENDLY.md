@@ -260,7 +260,7 @@ sudo python3 -m culturabuilder install
 
 ```bash
 # Clone o repositório
-git clone https://github.com/CulturaBuilder/CulturaBuilder-MCP.git
+git clone https://github.com/culturabuilder/culturabuilder-mcp.git
 cd CulturaBuilder-MCP
 
 # Instale dependências
@@ -293,7 +293,7 @@ Edite `~/.claude/claude_desktop_config.json`:
 
 ```bash
 # Clone o projeto
-git clone https://github.com/CulturaBuilder/CulturaBuilder-MCP.git
+git clone https://github.com/culturabuilder/culturabuilder-mcp.git
 
 # Crie branch
 git checkout -b minha-feature
@@ -333,8 +333,8 @@ git push origin minha-feature
 
 ### Opções de Suporte:
 
-1. **Issues no GitHub**: https://github.com/CulturaBuilder/CulturaBuilder-MCP/issues
-2. **Discussões**: https://github.com/CulturaBuilder/CulturaBuilder-MCP/discussions
+1. **Issues no GitHub**: https://github.com/culturabuilder/culturabuilder-mcp/issues
+2. **Discussões**: https://github.com/culturabuilder/culturabuilder-mcp/discussions
 3. **Discord**: [Link para comunidade]
 4. **Email**: suporte@culturabuilder.com
 

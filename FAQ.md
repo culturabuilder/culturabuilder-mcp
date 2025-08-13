@@ -132,7 +132,7 @@ Apenas os arquivos que você explicitamente pedir para processar.
 Veja o arquivo CONTRIBUTING.md no GitHub para instruções detalhadas.
 
 ### Onde reporto bugs?
-No GitHub Issues: https://github.com/CulturaBuilder/CulturaBuilder-MCP/issues
+No GitHub Issues: https://github.com/culturabuilder/culturabuilder-mcp/issues
 
 ### Tem documentação para desenvolvedores?
 Sim, na pasta `docs/` do repositório.

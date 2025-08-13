@@ -30,12 +30,12 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/NomenAK/CulturaBuilder"
-Repository = "https://github.com/NomenAK/CulturaBuilder"
-"Bug Tracker" = "https://github.com/NomenAK/CulturaBuilder/issues"
-"GitHub" = "https://github.com/NomenAK/CulturaBuilder"
-"Mithun Gowda B" = "https://github.com/mithun50"
-"NomenAK" = "https://github.com/NomenAK"
+Homepage = "https://github.com/culturabuilder/culturabuilder-mcp"
+Repository = "https://github.com/culturabuilder/culturabuilder-mcp"
+"Bug Tracker" = "https://github.com/culturabuilder/culturabuilder-mcp/issues"
+"GitHub" = "https://github.com/culturabuilder/culturabuilder-mcp"
+"Documentation" = "https://github.com/culturabuilder/culturabuilder-mcp/wiki"
+"Community" = "https://github.com/culturabuilder/culturabuilder-mcp/discussions"
 
 [project.scripts]
 CulturaBuilder = "CulturaBuilder.__main__:main"

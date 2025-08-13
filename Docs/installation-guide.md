@@ -13,7 +13,7 @@ uv add CulturaBuilder
 
 **Option B: From Source**
 ```bash
-git clone https://github.com/NomenAK/CulturaBuilder.git
+git clone https://github.com/culturabuilder/culturabuilder-mcp.git
 cd CulturaBuilder
 uv sync
 ```

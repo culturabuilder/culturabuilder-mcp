@@ -120,9 +120,9 @@ python3 -m culturabuilder install
 
 ## Links
 
-- [GitHub](https://github.com/decomontenegro/CulturaBuilder-MCP)
-- [Issues](https://github.com/decomontenegro/CulturaBuilder-MCP/issues)
-- [Discussions](https://github.com/decomontenegro/CulturaBuilder-MCP/discussions)
+- [GitHub](https://github.com/culturabuilder/culturabuilder-mcp)
+- [Issues](https://github.com/culturabuilder/culturabuilder-mcp/issues)
+- [Discussions](https://github.com/culturabuilder/culturabuilder-mcp/discussions)
 
 ---
 
@@ -141,6 +141,6 @@ python3 -m culturabuilder install
 
 ---
 
-[1.0.0]: https://github.com/decomontenegro/CulturaBuilder-MCP/releases/tag/v1.0.0
-[0.9.0]: https://github.com/decomontenegro/CulturaBuilder-MCP/releases/tag/v0.9.0
-[0.5.0]: https://github.com/decomontenegro/CulturaBuilder-MCP/releases/tag/v0.5.0
+[1.0.0]: https://github.com/culturabuilder/culturabuilder-mcp/releases/tag/v1.0.0
+[0.9.0]: https://github.com/culturabuilder/culturabuilder-mcp/releases/tag/v0.9.0
+[0.5.0]: https://github.com/culturabuilder/culturabuilder-mcp/releases/tag/v0.5.0
