@@ -1,219 +1,136 @@
 #!/bin/bash
 
-# CulturaBuilder MCP - Script de Instalação Automático
-# Detecta o sistema operacional e instala automaticamente
+# CulturaBuilder - Instalador Universal
+# Instalação completa em um único comando
 
-set -e  # Para em caso de erro
+set -e
 
-# Cores para output
+# Cores
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
 # Banner
 echo -e "${BLUE}"
 echo "╔═══════════════════════════════════════════════════════╗"
-echo "║          CulturaBuilder MCP - Instalador             ║"
-echo "║        Framework para Claude Code - v3.0.0           ║"
+echo "║              CulturaBuilder Framework                ║"
+echo "║                   Instalador v3.0.0                  ║"
 echo "╚═══════════════════════════════════════════════════════╝"
 echo -e "${NC}"
 
 # Detectar OS
-detect_os() {
-    if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        if [ -f /etc/debian_version ]; then
-            OS="debian"
-        elif [ -f /etc/redhat-release ]; then
-            OS="redhat"
-        else
-            OS="linux"
-        fi
-    elif [[ "$OSTYPE" == "darwin"* ]]; then
-        OS="macos"
-    elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "cygwin" ]] || [[ "$OSTYPE" == "win32" ]]; then
-        OS="windows"
-    else
-        OS="unknown"
-    fi
-    echo -e "${GREEN}✓${NC} Sistema detectado: ${YELLOW}$OS${NC}"
-}
+OS="unknown"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    OS="macos"
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    OS="linux"
+fi
+echo -e "${GREEN}✓${NC} Sistema: ${YELLOW}$OS${NC}"
 
-# Verificar Python
-check_python() {
-    echo -e "\n${BLUE}Verificando Python...${NC}"
-    
-    if command -v python3 &> /dev/null; then
-        # Solução compatível com macOS e Linux
-        PYTHON_VERSION=$(python3 --version 2>&1 | awk '{print $2}')
-        echo -e "${GREEN}✓${NC} Python encontrado: $PYTHON_VERSION"
+# Verificar e instalar Python se necessário
+install_python() {
+    if ! command -v python3 &> /dev/null; then
+        echo -e "${YELLOW}Instalando Python...${NC}"
         
-        # Verificar se é 3.8+
-        MAJOR=$(echo $PYTHON_VERSION | cut -d. -f1)
-        MINOR=$(echo $PYTHON_VERSION | cut -d. -f2)
-        
-        # Garantir que os valores não estão vazios
-        if [ -z "$MAJOR" ] || [ -z "$MINOR" ]; then
-            echo -e "${RED}✗${NC} Não foi possível detectar a versão do Python"
-            return 1
+        if [[ "$OS" == "macos" ]]; then
+            # macOS - instalar Homebrew se necessário
+            if ! command -v brew &> /dev/null; then
+                echo -e "${YELLOW}Instalando Homebrew...${NC}"
+                NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 2>/dev/null
+                
+                # Adicionar ao PATH
+                [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+                [[ -f /usr/local/bin/brew ]] && eval "$(/usr/local/bin/brew shellenv)"
+            fi
+            brew install python3
+        elif [[ "$OS" == "linux" ]]; then
+            # Linux - detectar distribuição
+            if [ -f /etc/debian_version ]; then
+                sudo apt update && sudo apt install -y python3 python3-pip
+            elif [ -f /etc/redhat-release ]; then
+                sudo dnf install -y python3 python3-pip
+            else
+                echo -e "${RED}Instale Python 3.8+ manualmente${NC}"
+                exit 1
+            fi
         fi
-        
-        if [ "$MAJOR" -ge 3 ] && [ "$MINOR" -ge 8 ]; then
-            echo -e "${GREEN}✓${NC} Python versão compatível"
-            return 0
-        else
-            echo -e "${RED}✗${NC} Python muito antigo. Versão 3.8+ necessária"
-            return 1
-        fi
-    else
-        echo -e "${RED}✗${NC} Python não encontrado"
-        return 1
-    fi
-}
-
-# Instalar Python no macOS
-install_python_macos() {
-    echo -e "\n${BLUE}Instalando Python no macOS...${NC}"
-    
-    # Verificar Homebrew
-    if ! command -v brew &> /dev/null; then
-        echo -e "${YELLOW}Homebrew não encontrado.${NC}"
-        echo -e "${YELLOW}Por favor, instale o Homebrew primeiro:${NC}"
-        echo "/bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
-        echo ""
-        echo -e "${YELLOW}Depois execute este script novamente.${NC}"
-        exit 1
     fi
     
-    echo -e "${BLUE}Instalando Python via Homebrew...${NC}"
-    brew install python3
-    
-    # Verificar se a instalação foi bem sucedida
-    if command -v python3 &> /dev/null; then
-        echo -e "${GREEN}✓${NC} Python instalado via Homebrew"
-    else
-        echo -e "${RED}✗${NC} Falha ao instalar Python"
-        exit 1
+    # Verificar versão
+    PYTHON_VERSION=$(python3 --version 2>&1 | awk '{print $2}')
+    echo -e "${GREEN}✓${NC} Python: $PYTHON_VERSION"
+}
+
+# Instalar pip se necessário
+install_pip() {
+    if ! python3 -m pip --version &> /dev/null; then
+        echo -e "${YELLOW}Instalando pip...${NC}"
+        curl -s https://bootstrap.pypa.io/get-pip.py | python3
     fi
-}
-
-# Instalar Python no Linux Debian/Ubuntu
-install_python_debian() {
-    echo -e "\n${BLUE}Instalando Python no Linux (Debian/Ubuntu)...${NC}"
-    sudo apt update
-    sudo apt install -y python3 python3-pip
-    echo -e "${GREEN}✓${NC} Python instalado"
-}
-
-# Instalar Python no Linux RedHat/Fedora
-install_python_redhat() {
-    echo -e "\n${BLUE}Instalando Python no Linux (RedHat/Fedora)...${NC}"
-    sudo dnf install -y python3 python3-pip
-    echo -e "${GREEN}✓${NC} Python instalado"
 }
 
 # Instalar CulturaBuilder
 install_culturabuilder() {
-    echo -e "\n${BLUE}Instalando CulturaBuilder MCP...${NC}"
+    echo -e "\n${BLUE}Instalando CulturaBuilder...${NC}"
     
-    # Verificar pip primeiro
-    if ! python3 -m pip --version &> /dev/null; then
-        echo -e "${YELLOW}pip não encontrado. Instalando...${NC}"
-        if [[ "$OS" == "macos" ]]; then
-            python3 -m ensurepip --upgrade
-        else
-            curl https://bootstrap.pypa.io/get-pip.py | python3
-        fi
-    fi
-    
-    # Tentar diferentes métodos
-    echo -e "${BLUE}Tentando instalar via pip...${NC}"
+    # Tentar instalar do PyPI
     if python3 -m pip install culturabuilder 2>/dev/null; then
-        echo -e "${GREEN}✓${NC} CulturaBuilder instalado com sucesso"
-    elif python3 -m pip install --user culturabuilder 2>/dev/null; then
-        echo -e "${GREEN}✓${NC} CulturaBuilder instalado com --user flag"
+        echo -e "${GREEN}✓${NC} Instalado via pip"
     else
+        # Instalar do GitHub
         echo -e "${YELLOW}Instalando do código fonte...${NC}"
-        git clone https://github.com/culturabuilder/culturabuilder-mcp.git /tmp/culturabuilder-mcp
-        cd /tmp/culturabuilder-mcp
-        python3 -m pip install .
-        cd -
-        rm -rf /tmp/culturabuilder-mcp
-        echo -e "${GREEN}✓${NC} CulturaBuilder instalado do código fonte"
+        TEMP_DIR=$(mktemp -d)
+        git clone https://github.com/culturabuilder/culturabuilder-mcp.git "$TEMP_DIR" 2>/dev/null
+        cd "$TEMP_DIR"
+        python3 -m pip install . 2>/dev/null
+        cd - > /dev/null
+        rm -rf "$TEMP_DIR"
+        echo -e "${GREEN}✓${NC} Instalado do GitHub"
     fi
-}
-
-# Configurar CulturaBuilder
-configure_culturabuilder() {
-    echo -e "\n${BLUE}Configurando CulturaBuilder no Claude...${NC}"
     
-    python3 -m culturabuilder install --quick
+    # Configurar
+    echo -e "${BLUE}Configurando...${NC}"
+    
+    # Adicionar ao PATH se necessário
+    export PATH="$HOME/.local/bin:$PATH"
+    
+    # Executar configuração
+    python3 -m culturabuilder install --quick 2>/dev/null || {
+        python3 -m culturabuilder install --minimal 2>/dev/null
+    }
     
     echo -e "${GREEN}✓${NC} Configuração completa"
 }
 
 # Verificar instalação
-verify_installation() {
-    echo -e "\n${BLUE}Verificando instalação...${NC}"
-    
+verify() {
     if [ -d "$HOME/.claude" ]; then
-        echo -e "${GREEN}✓${NC} Diretório ~/.claude encontrado"
-        
-        if [ -f "$HOME/.claude/CLAUDE.md" ]; then
-            echo -e "${GREEN}✓${NC} Arquivos de configuração instalados"
-        fi
+        echo -e "\n${GREEN}════════════════════════════════════════════${NC}"
+        echo -e "${GREEN}✓ CulturaBuilder instalado com sucesso!${NC}"
+        echo -e "${GREEN}════════════════════════════════════════════${NC}"
+        echo ""
+        echo -e "${YELLOW}Para começar:${NC}"
+        echo "Digite: /cb:help"
+        echo ""
+        echo -e "${BLUE}Documentação:${NC} https://github.com/culturabuilder/culturabuilder-mcp"
+        return 0
     else
-        echo -e "${RED}✗${NC} Instalação pode ter falhado"
+        echo -e "${RED}Erro na instalação${NC}"
         return 1
     fi
-    
-    echo -e "\n${GREEN}═══════════════════════════════════════════════════════${NC}"
-    echo -e "${GREEN}✓ CulturaBuilder MCP instalado com sucesso!${NC}"
-    echo -e "${GREEN}═══════════════════════════════════════════════════════${NC}"
-    echo ""
-    echo -e "${YELLOW}Próximos passos:${NC}"
-    echo "1. Abra o Claude Desktop ou Claude Code"
-    echo "2. Digite: /cb:help"
-    echo "3. Explore os comandos disponíveis!"
-    echo ""
-    echo -e "${BLUE}Documentação:${NC} https://github.com/culturabuilder/culturabuilder-mcp"
-    echo -e "${BLUE}Suporte:${NC} https://github.com/culturabuilder/culturabuilder-mcp/issues"
 }
 
-# Main
+# Executar instalação
 main() {
-    detect_os
-    
-    # Verificar ou instalar Python
-    if ! check_python; then
-        case $OS in
-            macos)
-                install_python_macos
-                ;;
-            debian)
-                install_python_debian
-                ;;
-            redhat)
-                install_python_redhat
-                ;;
-            *)
-                echo -e "${RED}Sistema não suportado para instalação automática${NC}"
-                echo "Por favor, instale Python 3.8+ manualmente"
-                exit 1
-                ;;
-        esac
-    fi
-    
-    # Instalar CulturaBuilder
+    install_python
+    install_pip
     install_culturabuilder
-    
-    # Configurar
-    configure_culturabuilder
-    
-    # Verificar
-    verify_installation
+    verify
 }
 
-# Executar
+# Rodar
 main
+
+# CulturaBuilder
