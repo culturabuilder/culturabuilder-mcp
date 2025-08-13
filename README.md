@@ -23,21 +23,58 @@ CulturaBuilder MCP é um framework revolucionário que transforma o Claude Code 
 
 ### Pré-requisitos
 - **Claude Desktop** ou **Claude Code CLI**
-- **Python 3.8+**
+- **Python 3.8+** (veja instruções por OS abaixo)
 
-### Instalação em 2 Minutos
+### 🎯 Instalação Automática (Recomendado)
 
+#### macOS/Linux:
 ```bash
-# Instalar via pip
-pip install culturabuilder
-
-# Configurar no Claude
-python3 -m culturabuilder install
-
-# Testar
-claude
-> /cb:help
+curl -sSL https://raw.githubusercontent.com/culturabuilder/culturabuilder-mcp/main/install.sh | bash
 ```
+
+#### Windows (PowerShell como Admin):
+```powershell
+irm https://raw.githubusercontent.com/culturabuilder/culturabuilder-mcp/main/install.ps1 | iex
+```
+
+### 🍎 macOS - Instalação Manual
+```bash
+# Se pip não funcionar, use python3 -m pip
+brew install python3  # Se não tiver Python
+python3 -m pip install culturabuilder
+python3 -m culturabuilder install
+```
+
+### 🪟 Windows - Instalação Manual
+```powershell
+# Instalar Python se necessário
+winget install Python.Python.3.12
+# Reiniciar PowerShell
+python -m pip install culturabuilder
+python -m culturabuilder install
+```
+
+### 🐧 Linux - Instalação Manual
+```bash
+# Ubuntu/Debian
+sudo apt install python3 python3-pip
+pip3 install culturabuilder
+
+# Fedora/RHEL
+sudo dnf install python3 python3-pip
+pip3 install culturabuilder
+
+# Configurar
+python3 -m culturabuilder install
+```
+
+### ❌ Erros Comuns
+
+**"command not found: pip"** → Use `python3 -m pip` ao invés de `pip`
+
+**"sudo: apt: command not found" (no Mac)** → Use `brew` no macOS, não `apt`
+
+📚 **[Guia Completo de Instalação](INSTALL.md)** com troubleshooting detalhado
 
 ## 🎮 Comandos Disponíveis
 
