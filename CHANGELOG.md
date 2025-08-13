@@ -1,80 +1,78 @@
 # 📋 Changelog
 
-Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
+All notable changes to this project will be documented in this file.
 
-O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
-e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR/).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.0.0] - 2024-08-08
 
-### 🎉 Release Inicial - CulturaBuilder
+### 🎉 Initial Release - CulturaBuilder
 
-#### ✨ Added (Adicionado)
-- **25 comandos `/cb:`** totalmente funcionais e verificados
-  - 8 comandos de desenvolvimento (build, scaffold, debug, refactor, improve, cleanup, inspect, workflow)
-  - 4 comandos de análise (analyze, audit, security, performance)
-  - 4 comandos de teste/deploy (test, deploy, rollback, release)
-  - 4 comandos de documentação (document, readme, changelog, help)
-  - 5 comandos de ferramentas (git, metrics, ai, learn, config)
-- **MCP Server** em TypeScript com integração completa ao Claude Desktop
-- **Suporte bilíngue** PT-BR e EN-US nativo
-- **Sistema de comandos** via arquivos Markdown em `~/.claude/commands/cb/`
-- **Documentação completa** em português
-  - docs/DOCUMENTATION.md - Documentação geral
-  - docs/COMMANDS_REFERENCE.md - Referência de comandos
-  - docs/ARCHITECTURE.md - Arquitetura técnica
-  - docs/INSTALLATION_GUIDE.md - Guia de instalação
-- **Scripts de instalação** automatizados para todas as plataformas
-- **Arte ASCII** do CULTURABUILDER no README
+#### ✨ Added
+- **16 commands `/cb:`** fully functional
+  - Development: implement, build, design, test
+  - Analysis: analyze, troubleshoot, explain, estimate
+  - Quality: improve, cleanup, document
+  - Management: task, git, spawn
+  - Meta: index, load
+- **MCP Server integration** with Claude Desktop
+- **11 AI personas** for specialized expertise
+- **Command system** via Markdown files
+- **Complete documentation**
+  - Documentation and guides
+  - Command reference
+  - Architecture documentation
+- **Installation scripts** for all platforms
 
-#### 🔄 Changed (Alterado)
-- **Framework Integrador**: CulturaBuilder unifica múltiplos frameworks
-- **Comandos unificados**: Todos os comandos usam `/cb:`
-- **Foco simplificado**: Removido complexidade desnecessária
-- **Arquitetura**: Sistema único e coeso para Claude Code
+#### 🔄 Changed
+- **Unified Framework**: CulturaBuilder extends Claude Code
+- **Unified commands**: All commands use `/cb:`
+- **Simplified focus**: Removed unnecessary complexity
+- **Architecture**: Cohesive system for Claude Code
 
-#### 🗑️ Removed (Removido)
-- **Frontend Web** - Interface web removida por complexidade desnecessária
-- **Extensão VSCode** - Removida após análise de viabilidade
-- Arquivos de migração obsoletos
-- ~110MB de código desnecessário
+#### 🗑️ Removed
+- **Web Frontend** - Removed for simplicity
+- **VSCode Extension** - Removed after feasibility analysis
+- Obsolete migration files
+- ~110MB of unnecessary code
 
-#### 🔒 Security (Segurança)
-- Validação de input em todos os comandos
-- Sanitização de argumentos
-- Permissões configuráveis por comando
-- Auditoria de execução de comandos
+#### 🔒 Security
+- Input validation on all commands
+- Argument sanitization
+- Configurable permissions per command
+- Command execution auditing
 
-#### 🐛 Fixed (Corrigido)
-- Sincronização entre comandos MCP e comandos nativos
-- Inconsistência de porta na documentação (5173)
-- Comandos faltantes no servidor MCP
-- Documentação incorreta sobre funcionalidades
+#### 🐛 Fixed
+- Synchronization between MCP and native commands
+- Port inconsistency in documentation
+- Missing MCP server commands
+- Incorrect feature documentation
 
-#### 📚 Documentation (Documentação)
-- README.md completamente reescrito e simplificado
-- README_BEGINNER_FRIENDLY.md para iniciantes
-- PROJECT_STATUS.md documentando a simplificação
-- Toda documentação em PT-BR com exemplos práticos
+#### 📚 Documentation
+- README.md completely rewritten and simplified
+- README_BEGINNER_FRIENDLY.md for beginners
+- PROJECT_STATUS.md documenting the simplification
+- Complete documentation with practical examples
 
 
 ---
 
-## Roadmap Futuro
+## Future Roadmap
 
-### [1.1.0] - Planejado
+### [1.1.0] - Planned
 - [ ] Interface web opcional simplificada
 - [ ] Mais templates de scaffold
 - [ ] Comandos adicionais para cloud providers
 - [ ] Melhorias na performance do MCP server
 
-### [1.2.0] - Planejado
+### [1.2.0] - Planned
 - [ ] Plugin system para comandos customizados
 - [ ] Integração com GitHub Actions
 - [ ] Dashboard de métricas local
 - [ ] Suporte para mais idiomas
 
-### [2.0.0] - Futuro
+### [2.0.0] - Future
 - [ ] API REST para comandos
 - [ ] Cloud sync de configurações
 - [ ] Marketplace de comandos
@@ -82,39 +80,38 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 
 ---
 
-## Notas de Instalação
+## Installation Notes
 
-#### Requisitos
-1. **Comandos unificados**: Todos os comandos usam `/cb:`
-2. **Configuração**: Arquivo de config em `~/.claude/`
-3. **Dependências**: Python 3.8+ requerido
+#### Requirements
+1. **Unified commands**: All commands use `/cb:`
+2. **Configuration**: Config file in `~/.claude/`
+3. **Dependencies**: Python 3.8+ required
 
-#### Como Instalar
+#### How to Install
 ```bash
-# 1. Instalar CulturaBuilder
+# 1. Install CulturaBuilder
 pip install culturabuilder
 
-# 2. Configurar
+# 2. Configure
 python3 -m culturabuilder install
 
-# 3. Testar
-# Digite /cb:help no Claude Code
+# 3. Test
+# Type /cb:help in Claude Code
 ```
 
 ---
 
-## Contribuidores
+## Contributors
 
-### Desenvolvedores Principais
-- André Montenegro (@decomontenegro) - Criador e mantenedor
+### Main Developers
+- André Montenegro (@decomontenegro) - Creator and maintainer
 
-### Contribuições
-- Comunidade CulturaBuilder - Feedback e testes
-- Usuários beta - Reportes de bugs e sugestões
+### Contributions
+- CulturaBuilder Community - Feedback and testing
+- Beta users - Bug reports and suggestions
 
-### Agradecimentos Especiais
-- Anthropic pela criação do Claude e MCP
-- Comunidade open source pelos exemplos e inspiração
+### Special Thanks
+- Open source community for examples and inspiration
 
 ---
 
@@ -126,18 +123,18 @@ python3 -m culturabuilder install
 
 ---
 
-**Convenções de Versionamento**:
-- **MAJOR**: Mudanças incompatíveis na API
-- **MINOR**: Funcionalidades adicionadas de forma compatível
-- **PATCH**: Correções de bugs compatíveis
+**Versioning Conventions**:
+- **MAJOR**: Incompatible API changes
+- **MINOR**: Backward-compatible functionality additions
+- **PATCH**: Backward-compatible bug fixes
 
-**Tipos de Mudança**:
-- ✨ **Added**: Nova funcionalidade
-- 🔄 **Changed**: Mudanças em funcionalidades existentes
-- ⚠️ **Deprecated**: Funcionalidades que serão removidas
-- 🗑️ **Removed**: Funcionalidades removidas
-- 🐛 **Fixed**: Correções de bugs
-- 🔒 **Security**: Correções de vulnerabilidades
+**Change Types**:
+- ✨ **Added**: New functionality
+- 🔄 **Changed**: Changes to existing functionality
+- ⚠️ **Deprecated**: Features that will be removed
+- 🗑️ **Removed**: Removed features
+- 🐛 **Fixed**: Bug fixes
+- 🔒 **Security**: Vulnerability fixes
 
 ---
 

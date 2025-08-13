@@ -160,8 +160,9 @@ performance-profile: "optimization|standard|complex"
 - **Magic**: UI component generation
 - **Playwright**: Testing and browser automation
 
-### Persona System (9)
-- **Technical**: architect, frontend, backend
+### Persona System (11)
+- **Technical**: architect, frontend, backend, security, performance
 - **Quality**: analyzer, qa, refactorer
-- **Specialized**: security, performance, scribe
+- **Operations**: devops
+- **Knowledge**: mentor, scribe
 

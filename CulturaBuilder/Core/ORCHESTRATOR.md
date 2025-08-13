@@ -1,6 +1,6 @@
 # ORCHESTRATOR.md - CulturaBuilder Intelligent Routing System
 
-Intelligent routing system for 16 commands and 9 personas in CulturaBuilder framework.
+Intelligent routing system for 16 commands and 11 personas in CulturaBuilder framework.
 
 ## 🧠 Detection Engine
 

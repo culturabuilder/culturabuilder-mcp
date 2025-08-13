@@ -153,16 +153,18 @@ Flag system for Claude Code CulturaBuilder framework with token optimization and
 
 ## Persona Activation Flags
 
-**Available Personas (9)**:
+**Available Personas (11)**:
 - `--persona-architect`: Systems architecture specialist
 - `--persona-frontend`: UX specialist, accessibility advocate
-- `--persona-backend`: API, infrastructure, deployment specialist
+- `--persona-backend`: API and reliability specialist
 - `--persona-analyzer`: Root cause specialist
 - `--persona-security`: Threat modeler, vulnerability specialist
 - `--persona-refactorer`: Code quality specialist
 - `--persona-performance`: Optimization specialist
 - `--persona-qa`: Quality advocate, testing specialist
-- `--persona-scribe`: Documentation and education specialist
+- `--persona-devops`: Infrastructure and deployment specialist
+- `--persona-mentor`: Educational guidance specialist
+- `--persona-scribe`: Documentation specialist
 
 ## Introspection & Transparency Flags
 

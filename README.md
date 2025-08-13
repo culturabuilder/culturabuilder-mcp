@@ -15,7 +15,7 @@ CulturaBuilder MCP is a comprehensive framework that transforms Claude Code into
 - **⚡ Performance**: Fast response for all commands
 - **🧩 Modular**: Extensible architecture with independent components
 - **🔧 16 Commands**: Specialized tools for every need
-- **🤖 9 AI Personas**: Virtual experts for each domain
+- **🤖 11 AI Personas**: Virtual experts for each domain
 - **💾 Token Optimization**: 70% reduction with `--uc` flag
 - **🔄 Smart Delegation**: Parallel processing with sub-agents
 
@@ -106,19 +106,21 @@ python3 -m culturabuilder install
 
 ## 🧠 AI Persona System
 
-CulturaBuilder MCP includes 9 specialized personas that activate automatically:
+CulturaBuilder MCP includes 11 specialized personas that activate automatically:
 
 | Persona | Specialty | Activation |
 |---------|-----------|------------|
 | **Architect** | System architecture | Design and scalability |
 | **Frontend** | UI/UX and accessibility | Components and interfaces |
-| **Backend** | APIs, infrastructure, deployment | Services and automation |
+| **Backend** | APIs and reliability | Services and data integrity |
 | **Security** | Security and compliance | Vulnerabilities and protection |
 | **Performance** | Optimization and metrics | Bottlenecks and speed |
 | **QA** | Testing and quality | Validation and edge cases |
 | **Analyzer** | Root cause analysis | Debugging and investigation |
 | **Refactorer** | Clean code | Technical debt and simplification |
-| **Scribe** | Documentation and education | Guides and knowledge transfer |
+| **DevOps** | Infrastructure automation | Deployment and monitoring |
+| **Mentor** | Educational guidance | Learning and knowledge transfer |
+| **Scribe** | Documentation | Professional writing and guides |
 
 ## 💾 Token Optimization
 
@@ -165,7 +167,7 @@ CulturaBuilder MCP
        │
        ├── Core Framework
        │   ├── Commands Engine (16 commands)
-       │   ├── Persona System (9 personas)
+       │   ├── Persona System (11 personas)
        │   ├── Token Optimizer
        │   └── MCP Integration
        │
@@ -196,21 +198,11 @@ CulturaBuilder MCP
 - ✅ Auditable logs of all operations
 - ✅ Command argument sanitization
 
-## 🌟 Why CulturaBuilder MCP?
+## 🌟 Why CulturaBuilder?
 
-1. **Unification**: One command for multiple frameworks
-2. **Intelligence**: Specialized AI for each domain
-3. **Efficiency**: Smart automation of repetitive tasks
-4. **Quality**: Best practices applied automatically
-5. **Performance**: 70% token reduction for optimal usage
+Because writing "fix the bug" shouldn't result in a philosophy lecture. You just want stuff to work, and we try to make that happen.
 
-## 📈 Roadmap
-
-- [ ] More framework integrations
-- [ ] Plugin system for custom commands
-- [ ] Optional web interface
-- [ ] Advanced metrics and analytics
-- [ ] Enhanced token optimization
+It's not perfect, but it usually gets the job done better than vanilla Claude Code.
 
 ## 💬 Support
 
