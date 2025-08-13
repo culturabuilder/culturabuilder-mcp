@@ -197,3 +197,5 @@ The framework uses comprehensive error handling:
 - No automatic execution of external scripts
 - Input validation on all command arguments
 - Secure handling of configuration files
+---
+CulturaBuilder

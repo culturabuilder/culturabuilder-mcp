@@ -201,3 +201,5 @@ Flag system for Claude Code CulturaBuilder framework with token optimization and
 **Token Optimization**: Context usage >75% OR large operations
 **Sub-Agent Auto-Activation**: >7 directories OR >50 files OR complexity >0.8
 **Loop Auto-Activation**: polish, refine, enhance, improve keywords detected
+---
+CulturaBuilder

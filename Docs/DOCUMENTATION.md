@@ -490,3 +490,5 @@ MIT - Veja [LICENSE](../LICENSE) para detalhes.
 ---
 
 **Última atualização**: 08 de Agosto de 2024 | **Versão**: 1.0.0
+---
+CulturaBuilder

@@ -607,3 +607,6 @@ Thanks for trying CulturaBuilder! We hope it makes your development workflow a b
 ---
 
 *Last updated: July 2024 - Let us know if anything in this guide is wrong or confusing!*
+
+---
+CulturaBuilder

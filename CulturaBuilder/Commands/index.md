@@ -31,3 +31,5 @@ Create and maintain comprehensive project documentation, indexes, and knowledge 
 - Leverages Grep for extracting documentation patterns
 - Applies Write for creating structured documentation
 - Maintains consistency with project conventions
+---
+CulturaBuilder

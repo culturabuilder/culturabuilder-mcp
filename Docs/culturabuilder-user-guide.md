@@ -3046,3 +3046,6 @@ Whether you use CulturaBuilder occasionally for specific tasks or integrate it d
 *CulturaBuilder v3.0 User Guide*
 
 *For questions, feedback, or contributions, visit our GitHub repository or join the community discussions. We're always happy to hear from users and learn about your experiences with the framework.*
+
+---
+CulturaBuilder

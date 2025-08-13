@@ -541,3 +541,5 @@ CulturaBuilder usually adds flags based on context. Here's when it tries:
 ---
 
 *Remember: Behind all this apparent complexity, CulturaBuilder is actually simple to use. Just start typing commands! 🚀*
+---
+CulturaBuilder

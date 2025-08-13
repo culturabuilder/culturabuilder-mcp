@@ -64,3 +64,5 @@ Simple actionable rules for Claude Code CulturaBuilder framework operation.
 - Personas: domain keywords + complexity assessment  
 - MCP servers: task type + performance requirements
 - Quality gates: all operations apply 8-step validation
+---
+CulturaBuilder

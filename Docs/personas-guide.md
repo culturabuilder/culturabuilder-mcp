@@ -869,3 +869,5 @@ Personas often work together automatically. Here are common collaboration patter
 ---
 
 *Behind all this apparent complexity of having 11 specialists, CulturaBuilder tries to be simple to use. Just start coding and helpful experts usually show up when needed! 🚀*
+---
+CulturaBuilder

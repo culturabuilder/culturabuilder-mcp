@@ -31,3 +31,5 @@ Execute comprehensive code analysis across quality, security, performance, and a
 - Leverages Grep for pattern-based analysis
 - Applies Read for deep code inspection
 - Maintains structured analysis reporting
+---
+CulturaBuilder

@@ -428,3 +428,5 @@ For issues or questions about metrics:
 2. Run `CulturaBuilder metrics --status` for diagnostics
 3. Review logs in `~/.culturabuilder/logs/`
 4. Open an issue on GitHub with sanitized details
+---
+CulturaBuilder

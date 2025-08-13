@@ -143,3 +143,5 @@ python3 -m twine upload dist/*
 ## 🎯 Pronto para Deploy!
 
 O projeto está completamente preparado para ser publicado como CulturaBuilder MCP - um framework independente e inovador para Claude Code.
+---
+CulturaBuilder

@@ -166,3 +166,5 @@ Você agora tem o CulturaBuilder instalado e funcionando!
 **Suporte: Disponível** 💬
 
 </div>
+---
+CulturaBuilder

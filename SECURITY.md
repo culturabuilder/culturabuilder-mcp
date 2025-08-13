@@ -198,3 +198,5 @@ For general security questions (not vulnerabilities):
 **Next Review**: October 2025
 
 Thank you for helping keep CulturaBuilder Framework secure! 🙏
+---
+CulturaBuilder

@@ -31,3 +31,5 @@ Generate accurate development estimates for tasks, features, or projects based o
 - Leverages Glob for codebase complexity assessment
 - Applies Grep for pattern-based estimation
 - Maintains structured estimation documentation
+---
+CulturaBuilder

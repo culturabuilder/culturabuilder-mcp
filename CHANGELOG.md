@@ -141,3 +141,5 @@ python3 -m culturabuilder install
 [1.0.0]: https://github.com/culturabuilder/culturabuilder-mcp/releases/tag/v1.0.0
 [0.9.0]: https://github.com/culturabuilder/culturabuilder-mcp/releases/tag/v0.9.0
 [0.5.0]: https://github.com/culturabuilder/culturabuilder-mcp/releases/tag/v0.5.0
+---
+CulturaBuilder

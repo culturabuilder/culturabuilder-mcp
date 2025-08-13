@@ -780,3 +780,6 @@ A practical guide to all 16 CulturaBuilder slash commands. We'll be honest about
 ---
 
 *Happy coding! Just remember - you can skip most of this guide and learn by doing. 🎯*
+
+---
+CulturaBuilder

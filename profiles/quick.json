@@ -12,5 +12,6 @@
   },
   "target_users": ["general", "developers"],
   "estimated_time_minutes": 2,
-  "disk_space_mb": 50
+  "disk_space_mb": 50,
+  "framework": "CulturaBuilder"
 }

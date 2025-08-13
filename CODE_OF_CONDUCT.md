@@ -164,3 +164,5 @@ This Code of Conduct is adapted from:
 **Next Review**: January 2026
 
 Thank you for helping make CulturaBuilder Framework a welcoming space for all developers! 🚀
+---
+CulturaBuilder

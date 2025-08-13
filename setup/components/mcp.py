@@ -496,3 +496,5 @@ class MCPComponent(Component):
             "dependencies": self.get_dependencies(),
             "required_tools": ["node", "npm", "claude"]
         }
+
+# CulturaBuilder

@@ -364,3 +364,5 @@ pass
             "install_directory": str(self.install_dir / "hooks"),
             "dependencies": self.get_dependencies()
         }
+
+# CulturaBuilder

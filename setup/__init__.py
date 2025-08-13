@@ -16,3 +16,4 @@ PROFILES_DIR = PROJECT_ROOT / "profiles"
 
 # Installation target
 DEFAULT_INSTALL_DIR = Path.home() / ".claude"
+# CulturaBuilder

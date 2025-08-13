@@ -224,3 +224,5 @@ MIT - Use freely in personal and commercial projects!
 [Website](https://culturabuilder.dev) • [GitHub](https://github.com/culturabuilder) • [Discord](https://discord.gg/culturabuilder)
 
 </div>
+---
+CulturaBuilder

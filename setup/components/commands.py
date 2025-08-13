@@ -327,3 +327,5 @@ class CommandsComponent(Component):
                         
         except Exception as e:
             self.logger.warning(f"Error during command migration: {e}")
+
+# CulturaBuilder

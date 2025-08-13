@@ -31,3 +31,5 @@ Load and analyze project context, configurations, dependencies, and environment 
 - Leverages Read for configuration analysis
 - Applies Bash for environment validation
 - Maintains efficient context caching mechanisms
+---
+CulturaBuilder

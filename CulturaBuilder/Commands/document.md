@@ -31,3 +31,5 @@ Generate precise, focused documentation for specific components, functions, or f
 - Leverages Edit for inline documentation updates
 - Applies Write for external documentation creation
 - Maintains documentation standards and conventions
+---
+CulturaBuilder

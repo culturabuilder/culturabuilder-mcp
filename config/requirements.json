@@ -50,5 +50,6 @@
       "win32": "npm is included with Node.js",
       "description": "npm is required for installing MCP servers"
     }
-  }
+  },
+  "framework": "CulturaBuilder"
 }

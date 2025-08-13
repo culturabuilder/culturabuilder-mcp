@@ -540,3 +540,5 @@ def run(args: argparse.Namespace) -> int:
         return 130
     except Exception as e:
         return operation.handle_operation_error("install", e)
+
+# CulturaBuilder

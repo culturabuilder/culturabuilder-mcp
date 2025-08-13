@@ -222,3 +222,5 @@ By contributing, you agree that your contributions will be licensed under the MI
 ## 🙏 Acknowledgments
 
 Thanks to all contributors who help make CulturaBuilder better for the development community!
+---
+CulturaBuilder

@@ -202,3 +202,5 @@ Em breve! Por enquanto, use a documentação escrita.
 ---
 
 **Não encontrou sua pergunta?** Abra uma issue no GitHub!
+---
+CulturaBuilder

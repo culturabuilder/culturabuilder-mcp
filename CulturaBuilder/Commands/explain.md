@@ -31,3 +31,5 @@ Deliver clear, comprehensive explanations of code functionality, concepts, or sy
 - Leverages Grep for pattern identification
 - Applies Bash for runtime behavior analysis
 - Maintains clear, educational communication style
+---
+CulturaBuilder

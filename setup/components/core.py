@@ -246,3 +246,5 @@ class CoreComponent(Component):
             "install_directory": str(self.install_dir),
             "dependencies": self.get_dependencies()
         }
+
+# CulturaBuilder

@@ -36,5 +36,6 @@
       "enabled": false,
       "required_tools": []
     }
-  }
+  },
+  "framework": "CulturaBuilder"
 }

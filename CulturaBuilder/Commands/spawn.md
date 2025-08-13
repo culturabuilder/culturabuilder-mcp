@@ -31,3 +31,5 @@ Decompose complex requests into manageable subtasks and coordinate their executi
 - Leverages file operations for coordinated changes
 - Applies efficient batching for related operations
 - Maintains clear dependency management
+---
+CulturaBuilder

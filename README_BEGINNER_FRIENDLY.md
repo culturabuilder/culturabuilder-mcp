@@ -365,3 +365,5 @@ MIT - Use livremente!
 ---
 
 **Feito com ❤️ pela comunidade CulturaBuilder**
+---
+CulturaBuilder
