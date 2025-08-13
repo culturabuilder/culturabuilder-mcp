@@ -110,7 +110,7 @@ class CommandsComponent(Component):
                     remaining_files = list(commands_dir.iterdir())
                     if not remaining_files:
                         commands_dir.rmdir()
-                        self.logger.debug("Removed empty sc commands directory")
+                        self.logger.debug("Removed empty cb commands directory")
                         
                         # Also remove parent commands directory if empty
                         parent_commands_dir = self.install_dir / "commands"
@@ -207,10 +207,10 @@ class CommandsComponent(Component):
         """Validate commands component installation"""
         errors = []
         
-        # Check if sc commands directory exists
+        # Check if cb commands directory exists
         commands_dir = self.install_dir / "commands" / "cb"
         if not commands_dir.exists():
-            errors.append("SC commands directory not found")
+            errors.append("CB commands directory not found")
             return False, errors
         
         # Check if all command files exist
@@ -268,7 +268,7 @@ class CommandsComponent(Component):
         }
     
     def _migrate_existing_commands(self) -> None:
-        """Migrate existing commands from old location to new sc subdirectory"""
+        """Migrate existing commands from old location to new cb subdirectory"""
         try:
             old_commands_dir = self.install_dir / "commands"
             new_commands_dir = self.install_dir / "commands" / "cb"
@@ -284,11 +284,11 @@ class CommandsComponent(Component):
                         commands_to_migrate.append(filename)
             
             if commands_to_migrate:
-                self.logger.info(f"Found {len(commands_to_migrate)} existing commands to migrate to sc/ subdirectory")
+                self.logger.info(f"Found {len(commands_to_migrate)} existing commands to migrate to cb/ subdirectory")
                 
                 # Ensure new directory exists
                 if not self.file_manager.ensure_directory(new_commands_dir):
-                    self.logger.error(f"Could not create sc commands directory: {new_commands_dir}")
+                    self.logger.error(f"Could not create cb commands directory: {new_commands_dir}")
                     return
                 
                 # Move files from old to new location
@@ -302,11 +302,11 @@ class CommandsComponent(Component):
                             # Remove old file
                             if self.file_manager.remove_file(old_file_path):
                                 migrated_count += 1
-                                self.logger.debug(f"Migrated {filename} to sc/ subdirectory")
+                                self.logger.debug(f"Migrated {filename} to cb/ subdirectory")
                             else:
                                 self.logger.warning(f"Could not remove old {filename}")
                         else:
-                            self.logger.warning(f"Could not copy {filename} to sc/ subdirectory")
+                            self.logger.warning(f"Could not copy {filename} to cb/ subdirectory")
                     except Exception as e:
                         self.logger.warning(f"Error migrating {filename}: {e}")
                 
